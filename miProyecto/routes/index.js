@@ -8,5 +8,6 @@ const indexController = require('../controllers/indexController')
 router.get('/', indexController.inicio);
 router.get('/login', indexController.login )
 router.get('/registrarse', indexController.register)
+router.get('/results', indexController.results)
 
 module.exports = router;
