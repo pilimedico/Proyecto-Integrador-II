@@ -4,6 +4,6 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/profile', usersController.profile);
-router.get('/register', usersController.editprofile)
+router.get('/editprofile', usersController.editprofile)
 
 module.exports = router;
