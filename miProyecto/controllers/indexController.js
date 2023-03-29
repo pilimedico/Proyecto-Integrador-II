@@ -2,8 +2,6 @@ const products = require('../db/products')
 
 const indexController = {
     inicio: function(req,res) {
-         
-        
         res.render('index', {products: products.lista})
 
     },
