@@ -10,9 +10,9 @@
 	<!-- Font Awesome Stylesheet -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="../stylesheets/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="../stylesheets/app.css">
+	<link rel="stylesheet" href="/stylesheets/app.css">
 </head>
 <body>
 	<!-- Header -->
@@ -23,7 +23,7 @@
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
 					<a href="index.html" class="main-header_home-link">
-						<img src="./images/logo-mercado-liebre.svg">
+						<img src="/images/logo-mercado-liebre.svg">
 					</a>
 				</div>
 	
@@ -49,7 +49,7 @@
 	
 			<nav class="main-navbar">
 				<ul class="left-navbar">
-					<li><a href="index.html">Todos los productos</a></li>
+					<li><a href="/index" >Todos los productos</a></li>
 					<!-- solo logueado <li><a href="">Cargar productos</a></li> -->
 				</ul>
 	
@@ -79,19 +79,17 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Nombre del producto</h2> 
+			<h2 class="products-title"> <%= product_trabajar.nombre %> </h2> 
 			<p class="product-detail-description">
-				<a href="product-add.html">Editar</a>
+				<a href="/products/add">Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="./images/products/default-image.png" alt="" class="product-detail-img">
+					<img src= "<%= product_trabajar.cover %>"  alt=" <%= product_trabajar.nombre %>  " class="product-detail-img">
 					<p class="product-detail-description">
-						Descripción corta del producto. En la página principal solo se ven 2 líneas de estar descripción.Lorem ipsum dolor,
-						sit amet consectetur adipisicing elit. Tae ipsam amet eum, totam dolore libero illo unde? Consectetur dolorem neque
-						veritatis.</p>
+						<%= product_trabajar.descripcion %>  </p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
