@@ -1,20 +1,20 @@
-const products = require('../db/products')
+const products = require('../data/data')
 
 const indexController = {
     inicio: function(req,res) {
-        res.render('index', {products: products.lista})
+        return res.render('index', {products: data.products})
 
     },
 
     login: function(req,res) {
-        res.render('login')
+        return res.render('login')
     },
 
     register: function(req,res) {
-        res.render('register')
+        return res.render('register')
     },
     results : function(req,res) {
-        res.render('search-results')
+        return res.render('search-results')
         
     }
 

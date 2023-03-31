@@ -1,12 +1,13 @@
 const usersController = {
 
     profile: function(req,res) {
-        res.render('profile')
+
+        return res.render('profile', {user:data.user})
 
     },
     
     editprofile: function(req,res) {
-        res.render('profile-edit')
+        return res.render('profile-edit')
     }
 
 }
