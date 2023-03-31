@@ -38,7 +38,7 @@ products = {
 
         }, 
         {
-            nombre: 'Cepillo Plancha Pelo Alisador',
+            nombre: 'Cepillo Alisador',
             cover: '/images/products/cepillo.jpg',
             descripcion: ' Cepillo Secador Alisador Electrico color Negro y Rosa. Seca el pelo en 10 minutos',
             comentarios: 28,
@@ -46,15 +46,15 @@ products = {
 
         }, 
         {
-            nombre: 'Planchita de pelo BaBlyssPRO',
-            cover: '/images/products/planchita.jpg',
+            nombre: 'Planchita de pelo ',
+            cover: '/images/products/planchita2.jpg',
             descripcion: ' Planchita de pelo BaBlyssPRO color celeste 240V. Plancha el pelo super rapido',
             comentarios: 26,
             id: 7 
 
         }, 
         {
-            nombre: 'Corrector de ojeras Maybelline Instand Age Rewind',
+            nombre: 'Corrector de ojeras',
             cover: '/images/products/corrector.jpg',
             descripcion: ' Excelenete corrector de ojeras, ilumina la zona de los ojos',
             comentarios: 32,
