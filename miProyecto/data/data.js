@@ -2,12 +2,84 @@ data = {
     products: [
 
         {
-            nombre: 'Cafetera Moulinex',
-            cover: '/images/products/img-cafetera-moulinex.jpg',
-            descripcion: ' Cafetera expreso. Funcionamiento: semi automático. Potencia de 1850 W',
+            nombre: 'Crema  Clinique',
+            cover: '/images/products/clinique.jpg',
+            descripcion: 'Crema hidratante de excelente calidad, Clinique',
+            comentarios: 20,
+            fecha_carga: '09/03/2023',
+            id: 1 
+
+        },
+        {
+            nombre: 'Dherma Oil',
+            cover: '/images/products/dherma.jpg',
+            descripcion: 'Serum hidratante Lidherma para rejuvenecer rostro.',
+            comentarios: 19,
+            fecha_carga: '07/03/2023',
+            id: 2 
+
+        }   ,
+
+        
+        {
+            nombre: 'Olaplex Oil',
+            cover: '/images/products/olaplex.jpg',
+            descripcion: 'Olaplex Oil, para el cuidado del cabello',
+            comentarios: 15,
+            fecha_carga: '12/08/2022',
+            id: 3
+        },
+        {
+            nombre: 'Ordinary acid',
+            cover: '/images/products/ordinary2.jpg',
+            descripcion: 'Acido Ordinary : Funciona como rejuvenecedor para la cara. Super recomendado',
+            comentarios: 10,
+            fecha_carga: '11/09/2022',
+            id: 4
+        },
+        {
+            nombre: 'Shiseido hidratante',
+            cover: '/images/products/shisheido.jpg',
+            descripcion: 'Crema hidratante Shiseido. Recomendado para pieles mixtas ',
+            comentarios: 30,
+            fecha_carga: '15/06/2022',
+            id: 5 
+
+        }, 
+        {
+            nombre: 'Laneige Lip Balm',
+            cover: '/images/products/laneige3.jpg',
+            descripcion: 'Laneige Sleeping Mask. 5 estrellas',
+            comentarios: 28,
+            fecha_carga: '24/02/2022',
+            id: 6 
+
+        }, 
+        {
+            nombre: 'Kiehls crema ojos ',
+            cover: '/images/products/cliniqueojos.jpg',
+            descripcion: 'Kiehls crema rejuvenecedora de ojos',
+            comentarios: 26,
+            fecha_carga: '10/03/2023',
+            id: 7 
+
+        }, 
+        {
+            nombre: 'Loreal antiarrugas',
+            cover: '/images/products/loreal.jpg',
+            descripcion: 'Excelenete crema humectante anti-arrugas LOREAL',
+            comentarios: 32,
+            fecha_carga: '12/03/2023',
+            id: 8 
+
+        },
+        {
+            nombre: 'Agua micelar',
+            cover: '/images/products/aguamicelar.jpg',
+            descripcion: 'Cafetera expreso. Funcionamiento: semi automático. Potencia de 1850 W',
             comentarios: 12,
             fecha_carga: '31/03/2023',
-            id: 1
+            id: 9
         },
         {
             nombre: 'MacBook pro 2019',
@@ -15,78 +87,9 @@ data = {
             descripcion: ' Computadora Macbook Pro 2019. Perfecto estado. Color space grey',
             comentarios: 20,
             fecha_carga: '15/03/2023',
-            id: 2
-        },
-        {
-            nombre: 'Samsung Galaxy s10',
-            cover: '/images/products/img-samsung-galaxy-s10.jpg',
-            descripcion: ' Telefono Samsung Galaxy. Color gris. Ultimo modelo.',
-            comentarios: 15,
-            fecha_carga: '12/08/2022',
-            id: 3
-        },
-        {
-            nombre: 'Tv Samsung Smart',
-            cover: '/images/products/img-tv-samsung-smart.jpg',
-            descripcion: ' TV Samsung Smart. Imagen de alta calidad. 100 pulgadas.',
-            comentarios: 10,
-            fecha_carga: '11/09/2022',
-            id: 4
-        },
-        {
-            nombre: 'Licuadora Peabody',
-            cover: '/images/products/licuadora.jpg',
-            descripcion: ' Licuadora Peabory, negra con jarra de plastico 220V.',
-            comentarios: 30,
-            fecha_carga: '15/06/2022',
-            id: 5 
-
-        }, 
-        {
-            nombre: 'Cepillo Alisador',
-            cover: '/images/products/cepillo.jpg',
-            descripcion: ' Cepillo Secador Alisador Electrico color Negro y Rosa. Seca el pelo en 10 minutos',
-            comentarios: 28,
-            fecha_carga: '24/02/2022',
-            id: 6 
-
-        }, 
-        {
-            nombre: 'Planchita de pelo ',
-            cover: '/images/products/planchita2.jpg',
-            descripcion: ' Planchita de pelo BaBlyssPRO color celeste 240V. Plancha el pelo super rapido',
-            comentarios: 26,
-            fecha_carga: '10/03/2023',
-            id: 7 
-
-        }, 
-        {
-            nombre: 'Corrector de ojeras',
-            cover: '/images/products/corrector.jpg',
-            descripcion: ' Excelenete corrector de ojeras, ilumina la zona de los ojos',
-            comentarios: 32,
-            fecha_carga: '12/03/2023',
-            id: 8 
-
-        },
-        {
-            nombre: 'Crema hidratante Clinique',
-            cover: '/images/products/corrector.jpg',
-            descripcion: 'Crema hidratante de excelente calidad, Clinique',
-            comentarios: 20,
-            fecha_carga: '09/03/2023',
-            id: 9 
-
-        },
-        {
-            nombre: 'Dherma Treatment Oil',
-            cover: '/images/products/corrector.jpg',
-            descripcion: 'Serum hidratante Lidherma para rejuvenecer rostro.',
-            comentarios: 19,
-            fecha_carga: '07/03/2023',
-            id: 10 
-
-        }   
+            id: 10
+        }
+       
  
     ],
 

@@ -2,7 +2,7 @@ const usersController = {
 
     profile: function(req,res) {
 
-        return res.render('profile', {user:data.user})
+        return res.render('profile', {user:data.user, products: data.products})
 
     },
     
