@@ -49,7 +49,7 @@ data = {
         {
             nombre: 'Laneige Lip Balm',
             cover: '/images/products/laneige3.jpg',
-            descripcion: 'Laneige Sleeping Mask. 5 estrellas',
+            descripcion: 'Laneige Sleeping Mask. Perfecto para el cuidado de los labios',
             comentarios: 28,
             fecha_carga: '24/02/2022',
             id: 6 
@@ -96,23 +96,27 @@ data = {
     comments: [
         {nombreusuario: 'Carla12345',
         texto: 'Tienen envios a todo el pais?',
+        cover: '/images/users/foto1.jpg',
         id: 1
         },
         {nombreusuario: 'FranciscaRomero22',
-        texto: 'Product 5 estrellas! Lo re recomiendo',
+        texto: 'Producto 5 estrellas! Lo re recomiendo',
+        cover: '/images/users/foto2.jpg',
         id: 2
         },
         {nombreusuario: 'NicoleSikorski13',
         texto: 'Siguen teniendo unidades disponibles?',
+        cover: '/images/users/foto3.jpg',
         id: 3 },
 
         {nombreusuario: 'PilarMedico75',
         texto: 'Cuantos dias tarda el envio?',
-        cover: '/images/users/foto2.jpg',
+        cover: '/images/users/foto4.jpg',
+        
         id: 4 },
 
         {nombreusuario: 'Veronica89',
-        cover: '/images/users/foto1.jpg',
+        cover: '/images/users/foto5.jpg',
         texto: 'Llegan los envios a Salta?',
         id: 5 }
 

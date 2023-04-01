@@ -7,7 +7,7 @@ const usersController = {
     },
     
     editprofile: function(req,res) {
-        return res.render('profile-edit')
+        return res.render('profile-edit', {user:data.user})
     }
 
 }
