@@ -47,14 +47,14 @@ data = {
 
         }, 
         {
-            nombre: 'Laneige Lip Balm',
-            cover: '/images/products/laneige3.jpg',
-            descripcion: 'Laneige Sleeping Mask. Perfecto para el cuidado de los labios',
-            comentarios: 28,
-            fecha_carga: '24/02/2022',
-            id: 6 
-
-        }, 
+            nombre: 'Dior lip oil',
+            cover: '/images/products/dior.jpg',
+            descripcion: 'Dior lip oil para que tus labios esten brillosos todo el dia',
+            comentarios: 30,
+            fecha_carga: '31/03/2023',
+            id: 6
+        },
+        
         {
             nombre: 'Clinique antiojeras ',
             cover: '/images/products/cliniqueojos.jpg',
@@ -65,29 +65,31 @@ data = {
 
         }, 
         {
+            nombre: 'Dior Eye Palette',
+            cover: '/images/products/dior2.jpg',
+            descripcion: 'Dior Eyeshadow Palette: La mejor paleta de ojos que vas a encontrar!',
+            comentarios: 28,
+            fecha_carga: '15/03/2023',
+            id: 8
+        },
+    
+        {
+            nombre: 'Laneige Lip Balm',
+            cover: '/images/products/laneige3.jpg',
+            descripcion: 'Laneige Sleeping Mask. Perfecto para el cuidado de los labios',
+            comentarios: 28,
+            fecha_carga: '24/02/2022',
+            id: 9
+
+        }, 
+        {
             nombre: 'Loreal antiarrugas',
             cover: '/images/products/loreal.jpg',
             descripcion: 'Excelenete crema humectante anti-arrugas LOREAL',
             comentarios: 32,
             fecha_carga: '12/03/2023',
-            id: 8 
-
-        },
-        {
-            nombre: 'Agua micelar',
-            cover: '/images/products/aguamicelar.jpg',
-            descripcion: 'Cafetera expreso. Funcionamiento: semi automático. Potencia de 1850 W',
-            comentarios: 12,
-            fecha_carga: '31/03/2023',
-            id: 9
-        },
-        {
-            nombre: 'MacBook pro 2019',
-            cover: '/images/products/img-macbook-pro-2019.jpg',
-            descripcion: ' Computadora Macbook Pro 2019. Perfecto estado. Color space grey',
-            comentarios: 20,
-            fecha_carga: '15/03/2023',
             id: 10
+
         }
        
  
