@@ -4,11 +4,11 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #dbc7c7;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
-  --light-gray: #ebebeb;
+  --light-pink: #f3ecec;
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif
 }
@@ -232,7 +232,7 @@ hr {
   position: absolute;
   top: -15px;
   right: 15px;
-  background-color: #ffffff;
+  background-color: #f3ecec;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -527,4 +527,5 @@ textarea.form-input {
     width: 95%;
     margin: auto;
   }
+
 }

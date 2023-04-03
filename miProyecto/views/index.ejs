@@ -33,134 +33,57 @@
       </div>
       <!-- Show the "ultimos" products -->
       
-      <div class="col-12 col-sm-6 col-lg-3">
+     
+      <% for (let i = 0; i < 4; i++) {  %>
+        <div class="col-12 col-sm-6 col-lg-3">
         <section class="product-box">
           
-          <a href="/products/detalle/id/<%= products[0].id %>  "> 
+          <a href="/products/detalle/id/<%= products[i].id %>  "> 
             <figure class="product-box_image">
-              <img src= '<%= products[0].cover %>' alt=<%= products[0].nombre   %> >
+              <img src= '<%= products[i].cover %>' alt=<%= products[i].nombre%> >
             </figure>
             <article class="product-box_data">
-               <h2> <%= products[0].nombre   %> </h2>
-              <p>Descripción: <%= products[0].descripcion %></p>
-              <p>Comentarios:<%= products[0].comentarios %> </p>
+               <h2> <%= products[i].nombre   %> </h2>
+              <p>Descripción: <%= products[i].descripcion %></p>
+              <p>Comentarios:<%= products[i].comentarios %> </p>
             </article>
           </a>
         </section>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-        <section class="product-box">
         
-          <a href="/products/detalle/id/<%= products[1].id %>  "> 
-            <figure class="product-box_image">
-              <img src='<%= products[1].cover %>' alt=<%= products[1].nombre   %> >
-            </figure>
-            <article class="product-box_data">
-              <h2><%= products[1].nombre   %></h2>
-              <p> Descripción: <%= products[1].descripcion %></p>
-              <p>Comentarios:  <%= products[1].comentarios %></p>
-            </article>
-          </a>
-        </section>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-        <section class="product-box">
-        
-          <a href="/products/detalle/id/<%= products[2].id %>  "> 
-            <figure class="product-box_image">
-              <img src= " <%= products[2].cover %> " alt= <%= products[2].nombre   %>>
-            </figure>
-            <article class="product-box_data">
-              <h2><%= products[2].nombre   %></h2>
-              <p>Descripción:<%= products[2].descripcion %> </p>
-              <p>Comentarios:<%= products[2].comentarios %> </p>
-            </article>
-          </a>
-          
-        </section>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-        <section class="product-box">
-              <a href="/products/detalle/id/<%= products[3].id %>  "> 
-            <figure class="product-box_image">
-              <img src= " <%= products[3].cover %> " alt= <%= products[3].nombre   %>>
-            </figure>
-            <article class="product-box_data">
-              <h2><%= products[3].nombre   %></h2>
-              <p>Descripción:<%= products[3].descripcion %> </p>
-              <p>Comentarios:<%= products[3].comentarios %> </p>
-            </article>
-          </a>
-        </section>
-      </div>
-    </div>
-  </div>
+      <% }  %>
+      
+  
+      
   <!-- /Novedades -->
   <!-- Más comentados -->
+  
   <div class="container products-wrapper">
     <div class="row">
       <div class="col-12">
         <h2 class="products-title">Más comentados</h2>
       </div>
       <!-- Show the "ultimos" products -->
-      <div class="col-12 col-sm-6 col-lg-3">
-         <section class="product-box">
-                <a href="/products/detalle/id/<%= products[4].id %>  "> 
-            <figure class="product-box_image">
-              <img src= " <%= products[4].cover %> " alt= <%= products[4].nombre   %>>
-            </figure>
-            <article class="product-box_data">
-              <h2><%= products[4].nombre   %></h2>
-              <p>Descripción:<%= products[4].descripcion %> </p>
-              <p>Comentarios:<%= products[4].comentarios %> </p>
-            </article>
-          </a>
-        </section>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-         <section class="product-box">
-               <a href="/products/detalle/id/<%= products[5].id %>  "> 
-            <figure class="product-box_image">
-              <img src= " <%= products[5].cover %> " alt= <%= products[5].nombre   %>>
-            </figure>
-            <article class="product-box_data">
-              <h2><%= products[5].nombre   %></h2>
-              <p>Descripción:<%= products[5].descripcion %> </p>
-              <p>Comentarios:<%= products[5].comentarios %> </p>
-            </article>
-          </a>
-        </section>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <% for (let i = 4; i < 8; i++) { %>
+        <div class="col-12 col-sm-6 col-lg-3">
+          
         <section class="product-box">
-                <a href="/products/detalle/id/<%= products[6].id %>  "> 
+          
+          <a href="/products/detalle/id/<%= products[i].id %>  "> 
             <figure class="product-box_image">
-              <img src= " <%= products[6].cover %> " alt= <%= products[6].nombre   %>>
+              <img src= '<%= products[i].cover %>' alt=<%= products[i].nombre   %> >
             </figure>
             <article class="product-box_data">
-              <h2><%= products[6].nombre   %></h2>
-              <p>Descripción:<%= products[6].descripcion %> </p>
-              <p>Comentarios:<%= products[6].comentarios %> </p>
+               <h2> <%= products[i].nombre   %> </h2>
+              <p>Descripción: <%= products[i].descripcion %></p>
+              <p>Comentarios:<%= products[i].comentarios %> </p>
             </article>
           </a>
         </section>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
-         <section class="product-box">
-                <a href="/products/detalle/id/<%= products[7].id %>  "> 
-            <figure class="product-box_image">
-              <img width='250px' src= " <%= products[7].cover %> " alt= <%= products[7].nombre   %>>
-            </figure>
-            <article class="product-box_data">
-              <h2><%= products[7].nombre   %></h2>
-              <p>Descripción:<%= products[7].descripcion %> </p>
-              <p>Comentarios:<%= products[7].comentarios %> </p>
-            </article>
-          </a>
-        </section>
-      </div>
-    </div>
-  </div>
+        
+      <% } %>
+    
   <!-- /Más comentados -->
 
 
