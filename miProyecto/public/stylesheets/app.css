@@ -527,5 +527,23 @@ textarea.form-input {
     width: 95%;
     margin: auto;
   }
+ /*====== Formularios nuestros ======*/
+
+ .formulario {
+   width: 400px;
+   background: #fdfdfd;
+   margin:auto;
+   padding: 30px;
+   margin-top: 100px; border-radius: 4px;
+  }
+
+ .botonFormulario{
+   background: var(--light-pink) ;
+   width: 100%;
+   border: none;
+   padding: 12px;
+   color: #fff;
+   margin: 16px 0;
+  }
 
 }
