@@ -2,9 +2,9 @@ data = {
     products: [
 
         {
-            nombre: 'Crema  Clinique',
-            cover: '/images/products/clinique.jpg',
-            descripcion: 'Crema hidratante de excelente calidad, Clinique',
+            nombre: 'RB Bronzer',
+            cover: '/images/products/rare2.jpg',
+            descripcion: 'Rare Beauty Bronzer, para pieles mixtas.',
             comentarios: 20,
             fecha_carga: '09/03/2023',
             id: 1 
@@ -22,9 +22,9 @@ data = {
 
         
         {
-            nombre: 'Olaplex Oil',
-            cover: '/images/products/olaplex.jpg',
-            descripcion: 'Olaplex Oil, para el cuidado del cabello',
+            nombre: 'RB Highlighter',
+            cover: '/images/products/rare.jpg',
+            descripcion: 'Highlighter super iluminoso',
             comentarios: 15,
             fecha_carga: '12/08/2022',
             id: 3

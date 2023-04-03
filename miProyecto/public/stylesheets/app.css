@@ -1,16 +1,23 @@
 /*====== Fonts ======*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 @import url('https://i.pinimg.com/564x/f4/fb/71/f4fb71dc5cd058436af246aca3a35c7b.jpg');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Lora:ital,wght@0,400;0,600;1,400&family=Ubuntu&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Lora:ital,wght@0,400;0,600;1,400&family=Sarabun:wght@200&family=Ubuntu&family=Varela+Round&display=swap');
 /*====== Variables ======*/
 :root {
-  --yellow: #dbc7c7;
+  --pink: #dbc7c7;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
-  --light-pink: #f3ecec;
+  --light-pink: white;
   --green: #39b54a;
-  --base-font-family: 'Playfair Display', sans-serif
+  --base-font-family: 'Sarabun', sans-serif;
+  --titulos-font-family: 'Barlow', sans-serif; 
+  --font: 'Lora', sans-serif;
+
+  
+
 }
 
 
@@ -27,9 +34,9 @@ body {
 }
 
 body {
-  font-family: var(--base-font-family);
+  font-family: var(--titulos-font-family);
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: var(--light-pink);
 }
 
 ul,
@@ -43,6 +50,7 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+  font-family: var(--base-font-family);
 }
 
 figure {
@@ -68,7 +76,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: var(--pink);
 }
 
 .main-header_home-link,
@@ -269,12 +277,13 @@ hr {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: #dbc7c7;
   font-size: 3.5em;
 }
 
 .footer-data h2 {
   color: var(--gray);
+  font-family: var(--font);
   font-size: 2.4em;
   font-weight: 400;
 }
@@ -286,7 +295,7 @@ hr {
 }
 
 .sub-footer {
-  border-top: 1px solid var(--light-gray);
+  border-top: 1px solid var(--light-pink);
   background-color: #ffffff;
 }
 
