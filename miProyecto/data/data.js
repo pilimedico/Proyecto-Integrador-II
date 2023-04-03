@@ -24,7 +24,7 @@ data = {
         {
             nombre: 'RB Highlighter',
             cover: '/images/products/rare.jpg',
-            descripcion: 'Highlighter super iluminoso',
+            descripcion: 'Highlighter super luminoso',
             comentarios: 15,
             fecha_carga: '12/08/2022',
             id: 3
@@ -127,7 +127,7 @@ data = {
             usuario: 'camilasikorski',
             contraseña: '12345678',
             dni: '21978156',
-            foto: '/images/users/fotoperfil.jpg'
+            foto: '/images/users/perfil1.jpg'
         }
 
 

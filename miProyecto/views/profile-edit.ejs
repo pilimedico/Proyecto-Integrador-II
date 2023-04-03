@@ -18,7 +18,7 @@
 
 <body>
 	<!-- Header -->
-	<header class="main-header">
+	
 	<%- include('./partials/headerLogueado.ejs') %> 
 	<!-- /Header -->
 
@@ -29,8 +29,8 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<div>
-				<form action="/users/profile" method="get">
+			<div class="container">
+				<form action="/users/profile" method="get" class="formulario">
 				<ul> 
 					<li><input type="email" name="mail" value="" id="mail"  placeholder="Ingrese un mail"></li> 
 					<li><input type="name" name="name" value="" id="name" placeholder="Ingrese un nombre"></li>
@@ -38,7 +38,7 @@
 					<li><input type="date" name="date" value="" placeholder="Ingrese fecha de nacimiento"></li>
 					<li><input type="number" name="number" value="" placeholder="Ingrese dni"></li>
 					<li><input type="file" name="file" value="" placeholder="Ingrese foto de perfl"></li>
-					<button type="submit">Enviar</button>
+					<button class="botonFormulario" type="submit">Enviar</button>
 				</ul>
 
 				</form>

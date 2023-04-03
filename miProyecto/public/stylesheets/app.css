@@ -10,7 +10,8 @@
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
-  --light-pink: white;
+  --white: white;
+  --light-pink: #f5efef;
   --green: #39b54a;
   --base-font-family: 'Sarabun', sans-serif;
   --titulos-font-family: 'Barlow', sans-serif; 
@@ -120,7 +121,7 @@ hr {
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
-  background-color: var(--dark-blue);
+  background-color: var(--pink);
   color: #ffffff;
   font-size: 1.5em;
   border: none;
@@ -479,7 +480,7 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color: var(--pink);
   padding: 10px 20px;
   border-radius: 4px;
   color: #fff;
@@ -547,7 +548,7 @@ textarea.form-input {
   }
 
  .botonFormulario{
-   background: var(--light-pink) ;
+   background: var(--pink) ;
    width: 100%;
    border: none;
    padding: 12px;

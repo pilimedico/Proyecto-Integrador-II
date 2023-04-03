@@ -37,46 +37,19 @@
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						
-						<article>
-							<img src="<%= comments[0].cover %>" alt="">
+						<% for (let i = 0; i < comments.length; i++) { %>
+							<article>
+							<img src="<%= comments[i].cover %>" alt="<%= comments[i].nombreusuario%>">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users/profile"> <%= comments[0].nombreusuario %>  </a> </strong>
-								<%= comments[0].texto %></p>
+								<strong> <a href="/users/profile"> <%= comments[i].nombreusuario %>  </a> </strong>
+								<%= comments[i].texto %></p>
 							</div>
 						</article>
-						<article>
-							<img src="<%= comments[1].cover %>" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/users/profile"><%= comments[1].nombreusuario %>  </a> </strong>
-									<%= comments[1].texto %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= comments[2].cover %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/profile"> <%= comments[2].nombreusuario %>  </a> </strong>
-								<%= comments[2].texto %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= comments[3].cover %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/profile"> <%= comments[3].nombreusuario %>  </a> </strong>
-								<%= comments[3].texto %></p>
-							</div>
-						</article>
-						<article>
-							<img src="<%= comments[4].cover %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/profile"> <%= comments[4].nombreusuario %>  </a> </strong>
-								<%= comments[4].texto %></p>
-							</div>
-						</article>
+							
+						<%  } %>
+						
+					
 
 					</section>
 					<form class="form" action="/products/detalle/id/:id" method="POST">
