@@ -1,5 +1,9 @@
 const productsController = {
 
+    index: function(req,res) {
+        
+    },
+
     detalle:function(req,res) {
         id = req.params.id
         for (let i = 0; i < data.products.length; i++) {
@@ -9,11 +13,11 @@ const productsController = {
             
         }
 
-        res.render('product', {id:id, products: data.products, product_trabajar : product_trabajar, comments:data.comments } )
+        res.render('product', {id:id, products: data.products, product_trabajar : product_trabajar, comments:data.comments, user:data.user } )
         
     },
     add: function(req,res) {
-        res.render('product-add')
+        res.render('product-add', {user:data.user})
     },
     /* edit: function(req,res) {
         

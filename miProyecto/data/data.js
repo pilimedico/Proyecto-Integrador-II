@@ -56,9 +56,9 @@ data = {
 
         }, 
         {
-            nombre: 'Kiehls crema ojos ',
+            nombre: 'Clinique antiojeras ',
             cover: '/images/products/cliniqueojos.jpg',
-            descripcion: 'Kiehls crema rejuvenecedora de ojos',
+            descripcion: 'Clinique crema rejuvenecedora de ojos',
             comentarios: 26,
             fecha_carga: '10/03/2023',
             id: 7 
