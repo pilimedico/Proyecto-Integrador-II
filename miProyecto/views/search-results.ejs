@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
-
-	<title> Mercado Liebre Argentina</title>
-	<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
-</head>
-
+<%- include('./partials/head.ejs') %> 
 <body>
 	<!-- Header -->
 	<%- include('./partials/header.ejs') %> 
@@ -37,53 +20,27 @@
 					</article>
 					<div class="col-12 col-lg-4">
 						<section class="comments">
+						
+						<% for (let i = 0; i < comments.length; i++) { %>
+							<article>
+							<img src="<%= comments[i].cover %>" alt="<%= comments[i].nombreusuario%>">
+							<div class="data">
+								<p class="user">
+								<strong> <a href="/users/profile"> <%= comments[i].nombreusuario %>  </a> </strong>
+								<%= comments[i].texto %></p>
+							</div>
+						</article>
 							
-							<article>
-								<img src="<%= comments[0].cover %>" alt="">
-								<div class="data">
-									<p class="user">
-									<strong> <a href="/users/profile"> <%= comments[0].nombreusuario %>  </a> </strong>
-									<%= comments[0].texto %></p>
-								</div>
-							</article>
-							<article>
-								<img src="<%= comments[1].cover %>" alt="">
-								<div class="data">
-									<p class="user">
-										<strong> <a href="/users/profile"><%= comments[1].nombreusuario %>  </a> </strong>
-										<%= comments[1].texto %></p>
-								</div>
-							</article>
-							<article>
-								<img src="<%= comments[2].cover %>" alt="">
-								<div class="data">
-									<p class="user">
-									<strong> <a href="/users/profile"> <%= comments[2].nombreusuario %>  </a> </strong>
-									<%= comments[2].texto %></p>
-								</div>
-							</article>
-							<article>
-								<img src="<%= comments[3].cover %>" alt="">
-								<div class="data">
-									<p class="user">
-									<strong> <a href="/users/profile"> <%= comments[3].nombreusuario %>  </a> </strong>
-									<%= comments[3].texto %></p>
-								</div>
-							</article>
-							<article>
-								<img src="<%= comments[4].cover %>" alt="">
-								<div class="data">
-									<p class="user">
-									<strong> <a href="/users/profile"> <%= comments[4].nombreusuario %>  </a> </strong>
-									<%= comments[4].texto %></p>
-								</div>
-							</article>
-	
+						<%  } %>
+						
+					
+
+				
 						</section>
 						<form class="form" action="/products/detalle/id/:id" method="POST">
 							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						</form>
-						<a class="form" href="/products/detalle/id/:id"> <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>  </a> 
+						<a class="form" href="/products/detalle/id/:id"> <button type="submit" class="botonFormulario">AGREGAR COMENTARIO</button>  </a> 
 						<hr>
 					</div>
 				</div>
