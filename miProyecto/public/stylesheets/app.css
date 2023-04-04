@@ -37,7 +37,7 @@ body {
 body {
   font-family: var(--titulos-font-family);
   font-weight: 300;
-  background-color: var(--light-pink);
+  background-color: var(--white);
 }
 
 ul,
