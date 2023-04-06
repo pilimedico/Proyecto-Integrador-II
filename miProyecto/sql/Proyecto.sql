@@ -18,6 +18,7 @@ deletedAt timestamp default current_timestamp
 /* los campos escribirlos siempre en misuscula */
 /* comentarios campo text*/
 
+
 use miProyecto;
 
 create table productos(
@@ -30,6 +31,7 @@ createdAt timestamp default current_timestamp,
 updatedAt timestamp default current_timestamp on update current_timestamp,
 deletedAt timestamp default current_timestamp
 );
+
 
 
 create table comentarios(
