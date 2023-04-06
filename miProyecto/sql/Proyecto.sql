@@ -30,3 +30,17 @@ createdAt timestamp default current_timestamp,
 updatedAt timestamp default current_timestamp on update current_timestamp,
 deletedAt timestamp default current_timestamp
 );
+
+
+create table comentarios(
+id_post int unsigned auto_increment,
+id_usuario int, 
+comentario text,
+usuario_id int,
+foreign key (usuario_id) references usuarios(id),
+producto_id int,
+foreign key (producto_id) references productos(id),
+createdAt timestamp default current_timestamp,
+updatedAt timestamp default current_timestamp on update current_timestamp,
+deletedAt timestamp default current_timestamp
+);
