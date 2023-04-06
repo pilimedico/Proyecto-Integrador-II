@@ -17,3 +17,5 @@ deletedAt timestamp default current_timestamp
 /* me daba error por poner text y constraint unique */
 /* los campos escribirlos siempre en misuscula */
 /* comentarios campo text*/
+
+
