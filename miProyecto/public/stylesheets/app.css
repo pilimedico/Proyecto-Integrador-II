@@ -438,6 +438,8 @@ hr {
   display: inline-block;
   font-size: 1.6em;
   margin: 10px 0;
+  align-content: center;
+  width: 100%;
 }
 
 .form-input {

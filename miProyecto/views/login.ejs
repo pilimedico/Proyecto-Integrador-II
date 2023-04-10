@@ -13,14 +13,16 @@
 			<!-- Show the "ultimos" products -->
 			<form action="/users/profile" method="get" class="formulario">
 				<ul> 
-					<li><input type="email" name="mail" value="" id="mail"  placeholder="Ingrese usuario (mail)"></li> 
-					<li><input type="password" name="password" value="" placeholder="Ingrese una contraseña"></li>
-					<li> <label> ¿Queres que te recuerde?</label>
-						<input type="checkbox" name="recordarme" value="Sí"  >
-					</li>
+					<li><label class="form-label" for="">Ingrese usuario (mail): </label></li>
+					<li><input class="form-label" type="email" name="mail" value="" id="mail" ></li> 
+					<li><label class="form-label" for="">Ingrese contraseña: </label></li>
+					<li><input class="form-label"type="password" name="password" value="" placeholder="Ingrese una contraseña"></li>
+					<li> <label class="form-label" for=""> ¿Queres que te recuerde?</label> </li>
+					<li> <input class="form-label" type="checkbox" name="recordarme" value="Sí" ></li>
+
 					
 			
-					<button class="botonFormulario" type="submit">Enviar</button>
+					<button class="botonFormulario"type="submit">Ingresar</button>
 				</ul>
 
 				</form>
