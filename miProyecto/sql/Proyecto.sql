@@ -98,7 +98,10 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Probe productos de esta marca pero no este y me re gusto', 4, 1),
 (default, 'Me pueden explicar como usarlo?', 4, 2),
 (default, 'Escencial, lo uso y lo recomiendo', 4, 3),
-(default, 'Indispensable', 4, 4);
+(default, 'Indispensable', 4, 4),
+(default, 'Tienen stock de otro color?', 4, 5),
+(default, 'Muy bueno para usar diariamnente', 4, 6),
+(default, 'Tienen envios a salta?', 4, 7);
 
 
 
