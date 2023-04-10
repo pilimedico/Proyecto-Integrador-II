@@ -77,7 +77,10 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Puedo pagar en cuotas?', 1, 10),
 (default, 'Muy util', 2, 1),
 (default, 'excelente calidad', 2, 2),
-(default, 'Tienen otros colores?', 2, 3);
+(default, 'Tienen otros colores?', 2, 3),
+(default, 'Contiene algo de nuez? Soy alergica', 2, 4),
+(default, 'Recomendado siempre', 2, 5),
+(default, 'El packaging es impresionante', 2, 6);
 
 
 
