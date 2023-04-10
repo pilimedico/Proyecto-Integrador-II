@@ -83,7 +83,12 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'El packaging es impresionante', 2, 6),
 (default, 'A mi hija le encanto', 2, 7),
 (default, 'Lo podran enviar con papel de regalo?', 2, 8),
-(default, 'Excdelente calidad de producto y de packaging', 2, 9);
+(default, 'Excdelente calidad de producto y de packaging', 2, 9),
+(default, 'Pesima calidad', 2, 10),
+(default, 'Hay compra minima?', 3, 1),
+(default, 'Excelente realcion precio calidad', 3, 2);
+
+
 
 
 
