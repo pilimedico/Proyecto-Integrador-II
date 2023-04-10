@@ -58,7 +58,13 @@ VALUES (default, 'RB Bronzer','Rare Beauty Bronzer, para pieles mixtas.',2 ),
 (default, 'Dherma Oil' , 'Serum hidratante Lidherma para rejuvenecer rostro.' , 1),
 (default, 'RB Highlighter' , 'Highlighter super luminoso' ,3),
 (default, 'Ordinary acid','Acido Ordinary : Funciona como rejuvenecedor para la cara. Super recomendado' , 4),
-(default, 'Shiseido hidratante', 'Crema hidratante Shiseido. Recomendado para pieles mixtas', 5);
+(default, 'Shiseido hidratante', 'Crema hidratante Shiseido. Recomendado para pieles mixtas', 5),
+(default, 'Dior lip oil' , 'Dior lip oil para que tus labios esten brillosos todo el dia' , 2),
+(default, 'Clinique antiojeras' , 'Clinique crema rejuvenecedora de ojos' ,1),
+(default, 'Dior Eye Palette','Dior Eyeshadow Palette: La mejor paleta de ojos que vas a encontrar!' , 3),
+(default, 'Laneige Lip Balm', 'Laneige Sleeping Mask. Perfecto para el cuidado de los labios', 4),
+(default, 'Loreal antiarrugas' , 'Excelenete crema humectante anti-arrugas LOREAL' , 5);
+
  
 
 
