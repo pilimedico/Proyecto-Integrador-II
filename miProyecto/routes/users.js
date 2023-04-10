@@ -7,3 +7,4 @@ router.get('/profile', usersController.profile);
 router.get('/editprofile', usersController.editprofile)
 
 module.exports = router;
+
