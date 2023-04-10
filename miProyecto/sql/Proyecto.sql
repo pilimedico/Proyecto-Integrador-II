@@ -80,7 +80,10 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Tienen otros colores?', 2, 3),
 (default, 'Contiene algo de nuez? Soy alergica', 2, 4),
 (default, 'Recomendado siempre', 2, 5),
-(default, 'El packaging es impresionante', 2, 6);
+(default, 'El packaging es impresionante', 2, 6),
+(default, 'A mi hija le encanto', 2, 7),
+(default, 'Lo podran enviar con papel de regalo?', 2, 8),
+(default, 'Excdelente calidad de producto y de packaging', 2, 9);
 
 
 
