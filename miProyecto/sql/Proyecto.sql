@@ -95,7 +95,11 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Me resulto genial', 3, 8),
 (default, 'Si compro hoy, llega para mañana?', 3, 9),
 (default, 'No esperaba mucho y me sorprendio. Lo super recomiendo', 3, 10),
-(default, 'Probe productos de esta marca pero no este y me re gusto', 4, 1);
+(default, 'Probe productos de esta marca pero no este y me re gusto', 4, 1),
+(default, 'Me pueden explicar como usarlo?', 4, 2),
+(default, 'Escencial, lo uso y lo recomiendo', 4, 3),
+(default, 'Indispensable', 4, 4);
+
 
 
 
