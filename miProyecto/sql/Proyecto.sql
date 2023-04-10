@@ -89,7 +89,10 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Excelente realcion precio calidad', 3, 2),
 (default, 'No me resulto util', 3, 3),
 (default, 'Es apto para celiacos?', 3, 4),
-(default, 'Se lo regale a una amiga y le encanto', 3, 5);
+(default, 'Se lo regale a una amiga y le encanto', 3, 5),
+(default, 'Cuanto tiempo demora el envio?', 3, 6),
+(default, 'Buen producto', 3, 7),
+(default, 'Me resulto genial', 3, 8);
 
 
 
