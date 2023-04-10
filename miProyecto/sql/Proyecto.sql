@@ -35,7 +35,6 @@ foreign key (usuario_id) references usuarios(id)
 
 create table comentarios(
 id_post int unsigned primary key auto_increment,
-id_usuario int, 
 comentario text,
 usuario_id int unsigned,
 producto_id int unsigned,
@@ -64,6 +63,12 @@ VALUES (default, 'RB Bronzer','Rare Beauty Bronzer, para pieles mixtas.',2 ),
 (default, 'Dior Eye Palette','Dior Eyeshadow Palette: La mejor paleta de ojos que vas a encontrar!' , 3),
 (default, 'Laneige Lip Balm', 'Laneige Sleeping Mask. Perfecto para el cuidado de los labios', 4),
 (default, 'Loreal antiarrugas' , 'Excelenete crema humectante anti-arrugas LOREAL' , 5);
+
+INSERT INTO comentarios(id_post, id_usuario, comentario, usuario_id, producto_id)
+VALUES (default, 'Excelente producto', 1, 1),
+(default, 'Producto regular para el precio', 1, 2),
+(default, 'Increible, recomendado', 1, 3),
+(default, 'Me encanto', 1, 4);
 
  
 
