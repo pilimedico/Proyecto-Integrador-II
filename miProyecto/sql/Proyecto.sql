@@ -86,7 +86,10 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Excdelente calidad de producto y de packaging', 2, 9),
 (default, 'Pesima calidad', 2, 10),
 (default, 'Hay compra minima?', 3, 1),
-(default, 'Excelente realcion precio calidad', 3, 2);
+(default, 'Excelente realcion precio calidad', 3, 2),
+(default, 'No me resulto util', 3, 3),
+(default, 'Es apto para celiacos?', 3, 4),
+(default, 'Se lo regale a una amiga y le encanto', 3, 5);
 
 
 
