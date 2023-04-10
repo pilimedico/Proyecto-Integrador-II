@@ -46,3 +46,4 @@ foreign key (producto_id) references productos(id)
 );
 
 
+
