@@ -71,7 +71,11 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Me encanto', 1, 4),
 (default, 'Muy bueno', 1, 5),
 (default, 'Super lindo', 1, 6),
-(default, 'Me encanto el color', 1, 7);
+(default, 'La descripcion es tal cual el producto', 1, 7),
+(default, 'Lo volveria a comprar', 1, 8),
+(default, 'Tienen envios a todo el pais?', 1, 9),
+(default, 'Puedo pagar en cuotas?', 1, 10);
+
 
 
  
