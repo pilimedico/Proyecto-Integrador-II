@@ -101,7 +101,11 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Indispensable', 4, 4),
 (default, 'Tienen stock de otro color?', 4, 5),
 (default, 'Muy bueno para usar diariamnente', 4, 6),
-(default, 'Tienen envios a salta?', 4, 7);
+(default, 'Tienen envios a salta?', 4, 7),
+(default, 'Excelente', 4, 5),
+(default, 'Lo uso diariamente, muy bueno', 4, 6),
+(default, 'Es un must have', 4, 7);
+
 
 
 
