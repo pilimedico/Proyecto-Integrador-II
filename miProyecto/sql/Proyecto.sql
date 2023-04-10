@@ -92,7 +92,10 @@ VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Se lo regale a una amiga y le encanto', 3, 5),
 (default, 'Cuanto tiempo demora el envio?', 3, 6),
 (default, 'Buen producto', 3, 7),
-(default, 'Me resulto genial', 3, 8);
+(default, 'Me resulto genial', 3, 8),
+(default, 'Si compro hoy, llega para mañana?', 3, 9),
+(default, 'No esperaba mucho y me sorprendio. Lo super recomiendo', 3, 10),
+(default, 'Probe productos de esta marca pero no este y me re gusto', 4, 1);
 
 
 
