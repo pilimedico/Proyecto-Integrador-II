@@ -49,7 +49,10 @@ foreign key (producto_id) references productos(id)
 INSERT INTO usuarios(id, email, contrasena, fotoDeperfil, fecha, dni)
 VALUES (default, 'Carla12345@gmail.com' , 'PI123456' , '/images/users/foto1.jpg', '10/04/23', '33446677'),
 (default, 'FranciscaRomero22@gmail.com' , 'JU123OOP' , '/images/users/foto2.jpg', '25/02/23', '44679877'),
-(default, 'NicoleSikorski13@gmail.com' , 'SI193LK56' , '/images/users/foto3.jpg', '02/01/23', '23205040');
+(default, 'NicoleSikorski13@gmail.com' , 'SI193LK56' , '/images/users/foto3.jpg', '02/01/23', '23205040'),
+(default, 'PilarMedico75@gmail.com', 'PM12345', '/images/users/foto4.jpg', '12-01-23', '66778899'),
+(default, 'Veronica89@gmail.com', 'V22345', '/images/users/foto5.jpg', '12-01-22', '6674599');
+
 
 
 
