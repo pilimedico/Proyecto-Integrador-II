@@ -53,7 +53,13 @@ VALUES (default, 'Carla12345@gmail.com' , 'PI123456' , '/images/users/foto1.jpg'
 (default, 'PilarMedico75@gmail.com', 'PM12345', '/images/users/foto4.jpg', '12-01-23', '66778899'),
 (default, 'Veronica89@gmail.com', 'V22345', '/images/users/foto5.jpg', '12-01-22', '6674599');
 
-
+INSERT INTO productos(id, nombre, descripcion, usuario_id )
+VALUES (default, 'RB Bronzer','Rare Beauty Bronzer, para pieles mixtas.',2 ),
+(default, 'Dherma Oil' , 'Serum hidratante Lidherma para rejuvenecer rostro.' , 1),
+(default, 'RB Highlighter' , 'Highlighter super luminoso' ,3),
+(default, 'Ordinary acid','Acido Ordinary : Funciona como rejuvenecedor para la cara. Super recomendado' , 4),
+(default, 'Shiseido hidratante', 'Crema hidratante Shiseido. Recomendado para pieles mixtas', 5);
+ 
 
 
 
