@@ -68,7 +68,11 @@ INSERT INTO comentarios(id_post, id_usuario, comentario, usuario_id, producto_id
 VALUES (default, 'Excelente producto', 1, 1),
 (default, 'Producto regular para el precio', 1, 2),
 (default, 'Increible, recomendado', 1, 3),
-(default, 'Me encanto', 1, 4);
+(default, 'Me encanto', 1, 4),
+(default, 'Muy bueno', 1, 5),
+(default, 'Super lindo', 1, 6),
+(default, 'Me encanto el color', 1, 7);
+
 
  
 
