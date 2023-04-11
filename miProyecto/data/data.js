@@ -11,9 +11,9 @@ data = {
 
         },
         {
-            nombre: 'Dherma Oil',
-            cover: '/images/products/dherma.jpg',
-            descripcion: 'Serum hidratante Lidherma para rejuvenecer rostro.',
+            nombre: 'ACF by Dadatina',
+            cover: '/images/products/serum_rosa.jpg',
+            descripcion: 'Serum hidratante  para rejuvenecer rostro.',
             comentarios: 19,
             fecha_carga: '07/03/2023',
             id: 2 
