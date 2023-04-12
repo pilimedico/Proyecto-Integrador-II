@@ -13,11 +13,11 @@ const productsController = {
             
         }
 
-        res.render('product', {id:id, products: data.products, product_trabajar : product_trabajar, comments:data.comments, user:data.user } )
+        return res.render('product', {id:id, products: data.products, product_trabajar : product_trabajar, comments:data.comments, user:data.user } )
         
     },
     add: function(req,res) {
-        res.render('product-add', {user:data.user})
+        return res.render('product-add', {user:data.user})
     },
     /* edit: function(req,res) {
         
