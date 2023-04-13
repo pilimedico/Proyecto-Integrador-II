@@ -1,3 +1,4 @@
+const data = require('../data/data');
 const usersController = {
 
     profile: function(req,res) {

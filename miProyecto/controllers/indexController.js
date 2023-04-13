@@ -1,4 +1,4 @@
-const products = require('../data/data')
+const data = require('../data/data');
 
 const indexController = {
     inicio: function(req,res) {
