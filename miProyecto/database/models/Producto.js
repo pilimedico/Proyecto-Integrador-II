@@ -37,6 +37,19 @@ module.exports = function(sequelize, dataTypes) {
         underscored: true
     }
     const Producto = sequelize.define(alias,cols,config); 
+    Producto.associate = function(models){
+        Producto.belongsTo(models.Usuario , {
+            as: 'usuarios',
+            foreignKey: 'usuario_id' //aclaramos en la relacion que usuario_id es una clave foranea relacionada a la tabla de usuarios
+        })
+        Producto.hasMany(models.Comentario, {
+            as: 'comentarios',
+            foreignKey: 'producto_id'
+        })
+        
+        
+    }
+
     return Producto;
 
 
