@@ -37,10 +37,10 @@
 					
 
 					</section>
-					<form class="form" action="/products/detalle/id/:id" method="GET">
+					<form class="form" action="/products/detalle/id/<%= product_trabajar.id %>" method="GET">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 					</form>
-					<a class="form" href="/products/detalle/id/:id"> <button type="submit" class="botonFormulario">AGREGAR COMENTARIO</button>  </a> 
+					<a class="form" href="/products/detalle/id/<%= product_trabajar.id %>"> <button type="submit" class="botonFormulario">AGREGAR COMENTARIO</button>  </a> 
 					<hr>
 				</div>
 			</div>
