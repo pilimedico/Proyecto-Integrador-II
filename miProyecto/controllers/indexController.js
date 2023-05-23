@@ -6,7 +6,11 @@ const Comentario = db.Comentario;
 
 const indexController = {
     inicio: function(req,res) {
-        return res.render('index',{products:data.products})
+        Producto.findAll()
+        .then(function(products){
+            return res.render('index', {products: products})
+        } )
+        .catch(function(err){console.log(err)})
         
        
 
