@@ -25,15 +25,15 @@ module.exports = function(sequelize, dataTypes) {
         dni: {
             type: dataTypes.INTEGER.UNSIGNED
         },
-        created_at:{ 
+        createdAt:{ 
             type: dataTypes.DATE,
             allowNull: true
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE,
             allowNull: true
         },
-        deleted_at: {
+        deletedAt: {
             type: dataTypes.DATE,
             allowNull: true
         }
@@ -41,17 +41,17 @@ module.exports = function(sequelize, dataTypes) {
     };
     let config = {
         tableName: "usuarios",
-        timestamps: false,
-        underscored: true
+        timestamps: true,
+        underscored: false
     }
     const Usuario = sequelize.define(alias,cols,config); 
     Usuario.associate = function(models){
         Usuario.hasMany(models.Producto , {
-            as: 'productos',
+            as: 'producto',
             foreignKey: 'usuario_id' 
         })
         Usuario.hasMany(models.Comentario, {
-            as: 'comentarios',
+            as: 'comentario',
             foreignKey: 'usuario_id'
         })
         
