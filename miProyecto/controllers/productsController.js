@@ -1,11 +1,11 @@
 const data = require('../data/data'); //requerimos el modulo exportado anteriormente.
 const db = require("../database/models")
+const Producto = db.Producto;
+const Usuario = db.Usuario;
+const Comentario = db.Comentario;
 
 const productsController = {
 
-    index: function(req,res) {
-        
-    },
 
     detalle:function(req,res) { 
 

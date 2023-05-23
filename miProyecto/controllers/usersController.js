@@ -1,4 +1,8 @@
 const data = require('../data/data');
+const db = require("../database/models")
+const Producto = db.Producto;
+const Usuario = db.Usuario;
+const Comentario = db.Comentario;
 const usersController = {
 
     profile: function(req,res) {

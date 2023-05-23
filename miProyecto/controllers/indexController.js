@@ -1,8 +1,14 @@
 const data = require('../data/data');
+const db = require("../database/models")
+const Producto = db.Producto;
+const Usuario = db.Usuario;
+const Comentario = db.Comentario;
 
 const indexController = {
     inicio: function(req,res) {
-        return res.render('index', {products: data.products})
+        return res.render('index',{products:data.products})
+        
+       
 
     },
 
