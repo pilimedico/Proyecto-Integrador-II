@@ -17,14 +17,56 @@ const indexController = {
     },
 
     login: function(req,res) {
-        return res.render('login')
+        Usuario.findAll()
+        .then(function(user){
+            return res.render('login', {user: user})
+        } )
+        .catch(function(err){console.log(err)})
     },
 
     register: function(req,res) {
-        return res.render('register')
+        Usuario.findAll()
+        .then(function(user){
+            return res.render('register', {user: user})
+        } )
+        .catch(function(err){console.log(err)})
     },
+
+
     results : function(req,res) {
-        return res.render('search-results', {products: data.products, comments:data.comments})
+
+        let search = req.query.search; //ponemos el nombre del formulario para tomar lo que llega
+        let relaciones = {
+            include: [
+                {association:"usuario"},
+                {association:"comentario"}
+            ]
+        }
+
+
+        Producto.findAll(relaciones)
+        .then(function(products){
+            Comentario.findAll(
+                {
+                    include: [
+                        {association:"usuario"},
+                        {association:"producto"}
+
+                    ]
+                }
+            )
+            .then(function(comments) {
+                Usuario.findAll()
+                .then(function(user){
+                    return res.render('search-results', {products: products, comments:comments})
+
+                })
+                
+
+            })
+            
+        })
+       
         
     }
 

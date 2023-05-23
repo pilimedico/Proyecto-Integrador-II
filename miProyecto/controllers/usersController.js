@@ -7,12 +7,30 @@ const usersController = {
 
     profile: function(req,res) {
 
-        return res.render('profile', {user:data.user, products: data.products})
+        Producto.findAll()
+        .then(function(products){
+            Usuario.findAll()
+            .then(function(user){
+                return res.render('profile', {user:user, products: products})
+
+            })
+        } )
+        .catch(function(err){console.log(err)})
+
+
+        
 
     },
     
     editprofile: function(req,res) {
-        return res.render('profile-edit', {user:data.user})
+
+        Usuario.findAll()
+        .then(function(user){
+            return res.render('profile-edit', {user: user})
+        } )
+        .catch(function(err){console.log(err)})
+
+
     }
 
 }

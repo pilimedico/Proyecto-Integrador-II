@@ -17,15 +17,15 @@ module.exports = function(sequelize, dataTypes) {
         usuario_id: {
             type: dataTypes.INTEGER.UNSIGNED
         },
-        created_at:{ 
+        createdAt:{ 
             type: dataTypes.DATE,
             allowNull: true
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE,
             allowNull: true
         },
-        deleted_at: {
+        deletedAt: {
             type: dataTypes.DATE,
             allowNull: true
         }
@@ -33,17 +33,17 @@ module.exports = function(sequelize, dataTypes) {
     };
     let config = {
         tableName: "productos",
-        timestamps: false,
-        underscored: true
+        timestamps: true,
+        underscored: false
     }
     const Producto = sequelize.define(alias,cols,config); 
     Producto.associate = function(models){
         Producto.belongsTo(models.Usuario , {
-            as: 'usuarios',
+            as: 'usuario',
             foreignKey: 'usuario_id' //aclaramos en la relacion que usuario_id es una clave foranea relacionada a la tabla de usuarios
         })
         Producto.hasMany(models.Comentario, {
-            as: 'comentarios',
+            as: 'comentario',
             foreignKey: 'producto_id'
         })
         
