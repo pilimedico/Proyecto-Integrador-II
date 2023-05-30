@@ -23,7 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session( { secret: "Nuestro mensaje secreto",
 				resave: false,
 				saveUninitialized: true }));
-        
+ 
+//Creando un midelware de aplication
+app.use(function(req, res, next){
+  if(req.session.user != undefined){
+    res.locals.user = req.session.user
+    return next()
+  }
+  return next()
+})
 
                 
 app.use('/', indexRouter);

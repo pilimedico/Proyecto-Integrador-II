@@ -11,32 +11,18 @@ const productsController = {
         let id = req.params.id
         let relaciones = {
             include: [
-                {association:"usuario"}
+                {association:"usuario"},
+                {association:"comentario", include: {association:"usuario"}}
             ]
         }
 
 
         Producto.findByPk(id,relaciones)
         .then(function(products){
-            Comentario.findAll(
-                {
-                    include: [
-                        {association:"usuario"},
-                        {association:"producto"}
-
-                    ]
-                }
-            )
-            .then(function(comments) {
-                Usuario.findAll()
-                .then(function(user){
-                    return res.render('product', {id:id, product_trabajar : products, comments:comments, user:user })
-
-                })
-                
-
-            })
+            return res.render('product', {products : products, user: [products.usuario] })
             
+        }).catch(function(err) {
+            console.log(err);
         })
    
     },

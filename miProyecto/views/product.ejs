@@ -7,7 +7,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"> <%= product_trabajar.nombre %> </h2> 
+			<h2 class="products-title"> <%= products.nombre %> </h2> 
 			<p class="product-detail-description">
 				<a href="/products/add">Editar</a>
 			</p>
@@ -15,32 +15,31 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src= "<%= product_trabajar.cover %>"  alt=" <%= product_trabajar.nombre %>  " class="product-detail-img">
+					<img src= "<%= products.cover %>"  alt=" <%= products.nombre %>  " class="product-detail-img">
 					<p class="product-detail-description">
-						<%= product_trabajar.descripcion %>  </p>
+						<%= products.descripcion %>  </p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						
-						<% for (let i = 0; i < comments.length; i++) { %>
+						<% for (let i = 0; i < products.comentario.length; i++) { %>
 							<article>
-							<img src="<%= comments[i].usuario.fotoDeperfil %>" alt="<%= comments[i].usuario.email%>">
+							<img src="<%= products.comentario[i].usuario.fotoDeperfil %>" alt="<%= products.comentario[i].usuario.email%>">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users/profile"> <%= comments[i].usuario.email%>  </a> </strong>
-								<%= comments[i].comentario %></p>
+								<strong> <a href="/users/profile"> <%= products.comentario[i].usuario.email%>  </a> </strong>
+								<%= products.comentario[i].comentario %></p>
 							</div>
 						</article>
 							
 						<%  } %>
 						
-					
 
 					</section>
-					<form class="form" action="/products/detalle/id/<%= product_trabajar.id %>" method="GET">
+					<form class="form" action="/products/detalle/id/<%= products.id %>" method="GET">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 					</form>
-					<a class="form" href="/products/detalle/id/<%= product_trabajar.id %>"> <button type="submit" class="botonFormulario">AGREGAR COMENTARIO</button>  </a> 
+					<a class="form" href="/products/detalle/id/<%= products.id %>"> <button type="submit" class="botonFormulario">AGREGAR COMENTARIO</button>  </a> 
 					<hr>
 				</div>
 			</div>

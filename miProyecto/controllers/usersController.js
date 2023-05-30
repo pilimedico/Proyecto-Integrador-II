@@ -7,15 +7,21 @@ const usersController = {
 
     profile: function(req,res) {
 
-        Producto.findAll()
-        .then(function(products){
-            Usuario.findAll()
-            .then(function(user){
-                return res.render('profile', {user:user, products: products})
+        let relaciones = {
+            include: [
+                {association:"producto"},
 
-            })
-        } )
-        .catch(function(err){console.log(err)})
+            ]
+        }
+
+
+        Usuario.findAll(relaciones)
+        .then(function(user){
+            return res.render('profile',{user:user})
+        }).catch(function(err) {
+            console.log(err);
+        })
+        
 
 
         

@@ -4,34 +4,38 @@ module.exports = function(sequelize, dataTypes) {
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER.UNSIGNED
+            type: dataTypes.INTEGER
         },
+        nombre:{
+            type: dataTypes.STRING,
+            allowNull: false,
+        } ,
         email:  {
-            type: dataTypes.STRING(200),
+            type: dataTypes.STRING,
             allowNull: false,
             unique: true
 
         },
         contrasena: {
-            type: dataTypes.STRING(250),
+            type: dataTypes.STRING,
             allowNull: false
         },
         fotoDeperfil: {
-            type: dataTypes.STRING(200)
+            type: dataTypes.STRING
         },
         fecha:{
             type: dataTypes.DATE
         },
         dni: {
-            type: dataTypes.INTEGER.UNSIGNED
+            type: dataTypes.INTEGER
         },
         createdAt:{ 
             type: dataTypes.DATE,
-            allowNull: true
+            allowNull: false
         },
         updatedAt: {
             type: dataTypes.DATE,
-            allowNull: true
+            allowNull: false
         },
         deletedAt: {
             type: dataTypes.DATE,
