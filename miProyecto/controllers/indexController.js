@@ -19,27 +19,33 @@ const indexController = {
     },
 
     login: function(req,res) {
-       
             return res.render('login')
-        
     },
-    /* loginPost: function(req,res){
-        // return res.send("procesando login");
-        let mail = req.body.mail
-        Usuario.findOne({where: {email:mail}}) 
-        .then(function(result) {
-            //recibis todo el objeto del usuario en result, entonces comparas que la contraseña sea igual con el compareSync
-            if(result){
-                //chequear la contraseña
-                    //cargar al usuario en session
-                    req.session.user = { nombre: "carla"}
-                    console.log(result);
-                    return res.send(req.session)
-                    //  y redirigirlo al perfil
+    loginPost: function(req,res){
+        Usuario.findOne(
+            {where: [{email: req.body.email}]}
+            )
+        .then(function (results) {
+            // si encuentra algo va a ser true de lo contrario sera false
+            if(results){
+        //si encuentra el mail checkeamos si coincide la contra
+                let check = bcryptjs.compareSync(req.body.password, results.contrasena) //estod evuelve true si coincide la contraseña del formulario con la de la base de datos
+                
+                if(check){
+                    req.session.Usuario = results.dataValues; 
+                    if (req.body.recordarme){
+                        res.cookie('usuario', results.dataValues.id, {maxAge: 1000 * 60 * 5})
+                    }
+                    return res.redirect('/')
+                }
+                else{
+                    return res.render("login")
+                }
             }
         })
+    },
 
-    }, */
+
     register:function (req,res) {
         return res.render('register')
     },
@@ -63,24 +69,18 @@ const indexController = {
             res.render('register')
 
         } else {
-            let criterio  = {
-                where: [{email : req.body.email}] //ver si el mail existe dentro de la base de datos
-            }
-            Usuario.findOne(criterio) 
-            .then(function(user) { //agregamos la propiedad de error y decimos que el email ya existe 
+    
+            Usuario.findOne({email : req.body.email}) 
+            .then(function(resultado) { //agregamos la propiedad de error y decimos que el email ya existe 
 
                 errors.message = "El email ya existe!"
                 res.locals.errors = errors;
-                res.redner('register')
+                res.render('register')
 
-
-                
-                
             }).catch(function(error) {
                 console.log(error);
             })
             
-
             let passEncriptada= bcryptjs.hashSync(req.body.password,12);
             let usuario = {
             nombre:req.body.nombre, //allowNull: false
@@ -92,7 +92,7 @@ const indexController = {
         }
                 
        Usuario.create(usuario);
-       return res.redirect('/users/profile');
+       return res.redirect('/login');
 
         }
 

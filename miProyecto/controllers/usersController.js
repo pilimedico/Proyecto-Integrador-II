@@ -6,7 +6,7 @@ const Comentario = db.Comentario;
 const usersController = {
 
     profile: function(req,res) {
-
+        let id = req.params.id
         let relaciones = {
             include: [
                 {association:"producto"},
@@ -15,7 +15,7 @@ const usersController = {
         }
 
 
-        Usuario.findAll(relaciones)
+        Usuario.findByPk(id, relaciones)
         .then(function(user){
             return res.render('profile',{user:user})
         }).catch(function(err) {
@@ -37,6 +37,12 @@ const usersController = {
         .catch(function(err){console.log(err)})
 
 
+    },
+    logout: function(req,res) {
+        req.session.destroy()
+        res.clearCookie('usuario') 
+        return res.redirect('/')
+        
     }
 
 }

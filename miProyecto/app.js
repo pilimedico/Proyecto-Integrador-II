@@ -26,11 +26,8 @@ app.use(session( { secret: "Nuestro mensaje secreto",
  
 //Creando un midelware de aplication
 app.use(function(req, res, next){
-  if(req.session.user != undefined){
-    res.locals.user = req.session.user
+    res.locals.username = req.session.Usuario
     return next()
-  }
-  return next()
 })
 
                 

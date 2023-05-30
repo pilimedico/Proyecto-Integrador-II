@@ -1,13 +1,19 @@
 <%- include('./partials/head.ejs') %> 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado.ejs') %> 
+	<% if (locals.username != undefined) { %>
+			<%- include('./partials/headerLogueado.ejs') %>  
+	<% } else{%>
+			<%- include('./partials/header.ejs') %>  
+	<% } %>
 	<!-- /Header -->
 	
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= products.nombre %> </h2> 
+
+			
 			<p class="product-detail-description">
 				<a href="/products/add">Editar</a>
 			</p>
@@ -27,7 +33,7 @@
 							<img src="<%= products.comentario[i].usuario.fotoDeperfil %>" alt="<%= products.comentario[i].usuario.email%>">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users/profile"> <%= products.comentario[i].usuario.email%>  </a> </strong>
+								<strong> <a href="/users/profile/<%= products.comentario[i].usuario.id %>"> <%= products.comentario[i].usuario.nombre%>  </a> </strong>
 								<%= products.comentario[i].comentario %></p>
 							</div>
 						</article>
