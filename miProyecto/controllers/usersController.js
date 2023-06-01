@@ -17,7 +17,12 @@ const usersController = {
 
         Usuario.findByPk(id, relaciones)
         .then(function(user){
-            return res.render('profile',{user:user})
+            Producto.findAll({where:[{usuario_id : id }]})
+            .then(function(products){
+                return res.render('profile',{user:user, products:products})
+
+            })
+            
         }).catch(function(err) {
             console.log(err);
         })

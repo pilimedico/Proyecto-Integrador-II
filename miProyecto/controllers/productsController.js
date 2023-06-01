@@ -2,6 +2,7 @@ const data = require('../data/data'); //requerimos el modulo exportado anteriorm
 const db = require("../database/models")
 const Producto = db.Producto;
 const Usuario = db.Usuario;
+const Comentario = db.Comentario;
 
 
 const productsController = {
@@ -29,6 +30,30 @@ const productsController = {
         })
    
     },
+    detalleComment: function(req,res) {
+        
+    
+        
+
+        let comentario = {
+            comentario:req.body.comentario, 
+            usuario_id: req.session.Usuario.id, 
+            producto_id: req.params.id, 
+            
+        }
+        Comentario.create(comentario)
+        Producto.findByPk(req.params.id)
+        .then(function(products){
+            return res.redirect(`/products/detalle/id/${products.id}`)
+            
+        }).catch(function(err) {
+            console.log(err);
+        })
+        
+        
+        
+
+    },
 
     add: function(req,res) {
         res.render('product-add')
@@ -39,12 +64,12 @@ const productsController = {
             nombre:req.body.nombre, 
             descripcion:req.body.descripcion, 
             cover:req.body.cover, 
-            usuario_id:  req.session.username.id,
-            fecha: req.body.date ,
-            dni: req.body.dni 
+            usuario_id:  req.session.Usuario.id
+        
         }
+        
         Producto.create(producto)
-        res.redirect('/')
+        return res.redirect('/')
     }
     
 

@@ -13,10 +13,14 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= products.nombre %> </h2> 
 
-			
+			<% if (locals.username != undefined) { %>
 			<p class="product-detail-description">
 				<a href="/products/add">Editar</a>
 			</p>
+	<% } %>
+
+
+			
 		</div>
 		<div class="product-detail">
 			<div class="row">
@@ -24,6 +28,8 @@
 					<img src= "<%= products.cover %>"  alt=" <%= products.nombre %>  " class="product-detail-img">
 					<p class="product-detail-description">
 						<%= products.descripcion %>  </p>
+					<p class="product-detail-description">
+						Publicado por: <a href="/users/profile/<%= products.usuario.id %>"><%= products.usuario.nombre %>  </p>	</a> 
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
@@ -42,11 +48,18 @@
 						
 
 					</section>
-					<form class="form" action="/products/detalle/id/<%= products.id %>" method="GET">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+
+					<% if (locals.username) { %>
+			<form class="form" action="/products/detalle/id/<%= products.id %>" method="POST">
+						<input class="form-input" type="text" name="comentario" value="" placeholder="Agregar comentario">
+						<button type="submit" class="botonFormulario">AGREGAR COMENTARIO</button>
 					</form>
-					<a class="form" href="/products/detalle/id/<%= products.id %>"> <button type="submit" class="botonFormulario">AGREGAR COMENTARIO</button>  </a> 
+					
 					<hr>
+	<% } %>
+
+
+					
 				</div>
 			</div>
 		</div>

@@ -1,7 +1,11 @@
 <%- include('./partials/head.ejs') %> 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado.ejs') %> 
+	<% if (locals.username != undefined) { %>
+			<%- include('./partials/headerLogueado.ejs') %>  
+	<% } else{%>
+			<%- include('./partials/header.ejs') %>  
+	<% } %>
 	<!-- /Header -->
 
 	<!-- Datos del usuario -->
@@ -17,15 +21,7 @@
 						
 					</h1>
 			
-			<% if (username.id == user.id) { %>
-			 <h1 class="main-title">
-					<a href="/users/editprofile">
-							<i class="fas fa-cog"></i>
-						</a>
-						</h1>
-			<% } else { %>
-			<a class="btn mt-3 ml-4" href="">SEGUIR</a>
-			<% }  %>
+		
 			 
 
 
@@ -35,7 +31,7 @@
 				</div>
 				<div>
 					<ul class="">
-						<li>10 productos</li>
+						<li> <%= products.length %>  productos</li>
 						<li>200 seguidores</li>
 						<li>5 comentarios</li>
 					</ul>
@@ -52,7 +48,24 @@
 				<h2 class="products-title">Mis productos</h2>
 			</div>
 	<!-- Show mis productos -->
-			
+			<% for (let i = 0; i < products.length; i++) {  %>
+        <div class="col-12 col-sm-6 col-lg-3">
+        <section class="product-box">
+          
+          <a href="/products/detalle/id/<%= products[i].id %>  "> 
+            <figure class="product-box_image">
+              <img src= '<%= products[i].cover %>' alt=<%= products[i].nombre%> >
+            </figure>
+            <article class="product-box_data">
+               <h2> <%= products[i].nombre   %> </h2>
+              <p>Descripción: <%= products[i].descripcion %></p>
+              <p>Comentarios:<%= products[i].comentarios %> </p>
+            </article>
+          </a>
+        </section>
+      </div>
+        
+      <% }  %>
 			
 	<!-- /Mis productos -->
 

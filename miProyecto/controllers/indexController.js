@@ -39,6 +39,9 @@ const indexController = {
                     return res.redirect('/')
                 }
                 else{
+                    let errors = {};
+                    errors.message = "Usuario o contraseña incorrectos"
+                    res.locals.errors = errors;
                     return res.render("login")
                 }
             }
