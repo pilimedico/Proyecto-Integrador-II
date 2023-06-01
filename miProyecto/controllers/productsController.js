@@ -8,7 +8,7 @@ const productsController = {
 
 
     detalle:function(req,res) { 
-        let id = req.params.id
+        let id = req.params.id  
         let relaciones = {
             include: [
                 {association:"usuario"}
