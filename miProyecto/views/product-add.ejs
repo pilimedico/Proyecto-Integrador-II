@@ -1,7 +1,11 @@
 <%- include('./partials/head.ejs') %> 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado.ejs') %> 
+<% if (locals.username != undefined) { %>
+			<%- include('./partials/headerLogueado.ejs') %>  
+	<% } else{%>
+			<%- include('./partials/header.ejs') %>  
+	<% } %>
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -12,16 +16,16 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="container">
-				<form action="/users/profile" method="get" class="formulario">
+				<form action="/products/add" method="POST" class="formulario">
 				<ul> 
 					<li><label class="form-label" for="">Agregue una imagen: </label></li> 
-					<li><input class="form-label" type="file" name="file" value="" ></li>
+					<li><input class="form-label" type="text" name="cover" value="" ></li>
 					<li><label class="form-label" for="">Ingrese nombre del producto: </label></li> 
-					<li><input class="form-label" type="text" name="text" value="" id="name" </li>
+					<li><input class="form-label" type="text" name="nombre" value="" id="name" </li>
 					<li><label class="form-label" for="">Agregue una descripcion: </label></li> 
-					<li><input class="form-label" type="text" name="text" value="" ></li>
+					<li><input class="form-label" type="text" name="descripcion" value="" ></li>
 					<li><label class="form-label" for="">Ingrese fecha de carga: </label></li> 
-					<li><input class="form-label" type="date" name="date" value="" </li>
+					<li><input class="form-label" type="date" name="createdAt" value="" </li>
 					<button class="botonFormulario"type="submit">Agregar productos</button>
 				</ul>
 

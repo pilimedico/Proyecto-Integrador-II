@@ -11,21 +11,22 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form action="/users/profile" method="get" class="formulario">
+			<form action="/login" method="post" class="formulario">
 				<ul> 
 					<li><label class="form-label" for="email">Ingrese usuario (mail): </label></li>
-					<li><input class="form-label" type="email" name="mail" value="" required></li> 
+					<li><input class="form-label" type="email" name="email" value="" required></li> 
 					<li><label class="form-label" for="password">Ingrese contraseña: </label></li>
 					<li><input class="form-label"type="password" name="password" value="" placeholder="" required></li>
 					<li> <label class="form-label" for="checkbox"> ¿Queres que te recuerde?</label> </li>
 					<li> <input class="form-label" type="checkbox" name="recordarme" value="Sí" ></li>
-
-					
-			
 					<button class="botonFormulario"type="submit">Ingresar</button>
 				</ul>
 
 				</form>
+				<% if (locals.errors) { %> 
+					<h2 class =  "footer-data h2"> <%= locals.errors.message %>  </h2>
+					 
+					<% } %> 
 			</div>
 
 

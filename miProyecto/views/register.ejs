@@ -12,24 +12,29 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="container">
-				<form action="/users/profile" method="get" class="formulario">
+				<form action="/register" method="POST" class="formulario">
 					<ul> 
 						<li><label class="form-label" for="email">Ingrese un mail: </label></li> 
-						<li><input class="form-label" type="email" name="mail" value="" required ></li> 
+						<li><input class="form-label" type="text" name="email" value="" required ></li> 
 						<li><label class="form-label" for="text">Ingrese un nombre de usuario: </label></li> 
-						<li><input class="form-label" type="text" name="text" value="" required></li>
+						<li><input class="form-label" type="text" name="nombre" value="" ></li>
 						<li><label class="form-label" for="password">Ingrese una contraseña:  </label></li> 
 						<li><input class="form-label" type="password" name="password" value="" required</li>
 						<li><label class="form-label" for="date">Ingrese fecha de nacimiento: </label></li> 
 						<li><input class="form-label" type="date" name="date" value="" </li>
 						<li><label class="form-label" for="number">Ingrese su DNI:</label></li> 
-						<li><input class="form-label" type="number" name="number" value="" ></li>
+						<li><input class="form-label" type="number" name="dni" value="" ></li>
 						<li><label class="form-label" for="">Ingrese una foto de perfil: </label></li> 
-						<li><input class="form-label" type="file" name="file" value="" ></li>
+						<li><input class="form-label" type="text" name="fotoDeperfil" value="" ></li>
 						<button class="botonFormulario" type="submit">Registrate</button>
 					</ul>
 	
 					</form>
+
+					<% if (locals.errors) { %> 
+					<h2 class =  "footer-data h2"> <%= locals.errors.message %>  </h2>
+					 
+					<% } %> 
 			</div>
 
 

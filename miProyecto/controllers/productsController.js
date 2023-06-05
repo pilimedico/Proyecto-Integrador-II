@@ -4,53 +4,73 @@ const Producto = db.Producto;
 const Usuario = db.Usuario;
 const Comentario = db.Comentario;
 
+
 const productsController = {
 
+    index: function(req,res) {
+        
+    },
 
     detalle:function(req,res) { 
         let id = req.params.id  
         let relaciones = {
             include: [
-                {association:"usuario"}
+                {association:"usuario"},
+                {association:"comentario", include: {association:"usuario"}}
             ]
         }
 
 
         Producto.findByPk(id,relaciones)
         .then(function(products){
-            Comentario.findAll(
-                {
-                    include: [
-                        {association:"usuario"},
-                        {association:"producto"}
-
-                    ]
-                }
-            )
-            .then(function(comments) {
-                Usuario.findAll()
-                .then(function(user){
-                    return res.render('product', {id:id, product_trabajar : products, comments:comments, user:user })
-
-                })
-                
-
-            })
+            return res.render('product', {products : products, user: [products.usuario] })
             
+        }).catch(function(err) {
+            console.log(err);
         })
    
     },
-
-    add: function(req,res) {
+    detalleComment: function(req,res) {
         
-        Usuario.findAll()
-        .then(function(user){
-            return res.render('product-add', {user: user})
-        } )
-        .catch(function(err){console.log(err)})
+    
+        
 
+        let comentario = {
+            comentario:req.body.comentario, 
+            usuario_id: req.session.Usuario.id, 
+            producto_id: req.params.id, 
+            
+        }
+        Comentario.create(comentario)
+        Producto.findByPk(req.params.id)
+        .then(function(products){
+            return res.redirect(`/products/detalle/id/${products.id}`)
+            
+        }).catch(function(err) {
+            console.log(err);
+        })
+        
+        
+        
 
     },
+
+    add: function(req,res) {
+        res.render('product-add')
+
+    },
+    postAdd: function(req,res) {
+        let producto = {
+            nombre:req.body.nombre, 
+            descripcion:req.body.descripcion, 
+            cover:req.body.cover, 
+            usuario_id:  req.session.Usuario.id
+        
+        }
+        
+        Producto.create(producto)
+        return res.redirect('/')
+    }
     
 
 }

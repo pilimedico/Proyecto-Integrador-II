@@ -7,12 +7,15 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.INTEGER.UNSIGNED
         },
         nombre:  {
-            type: dataTypes.STRING(200),
+            type: dataTypes.STRING,
             allowNull: false
         },
         descripcion: {
-            type: dataTypes.STRING(500),
+            type: dataTypes.STRING,
             allowNull: false
+        },
+        cover: {
+            type: dataTypes.STRING
         },
         usuario_id: {
             type: dataTypes.INTEGER.UNSIGNED

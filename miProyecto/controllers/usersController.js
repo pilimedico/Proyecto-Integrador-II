@@ -6,16 +6,27 @@ const Comentario = db.Comentario;
 const usersController = {
 
     profile: function(req,res) {
+        let id = req.params.id
+        let relaciones = {
+            include: [
+                {association:"producto"},
 
-        Producto.findAll()
-        .then(function(products){
-            Usuario.findAll()
-            .then(function(user){
-                return res.render('profile', {user:user, products: products})
+            ]
+        }
+
+
+        Usuario.findByPk(id, relaciones)
+        .then(function(user){
+            Producto.findAll({where:[{usuario_id : id }]})
+            .then(function(products){
+                return res.render('profile',{user:user, products:products})
 
             })
-        } )
-        .catch(function(err){console.log(err)})
+            
+        }).catch(function(err) {
+            console.log(err);
+        })
+        
 
 
         
@@ -31,6 +42,12 @@ const usersController = {
         .catch(function(err){console.log(err)})
 
 
+    },
+    logout: function(req,res) {
+        req.session.destroy()
+        res.clearCookie('usuario') 
+        return res.redirect('/')
+        
     }
 
 }
