@@ -157,6 +157,11 @@ const productsController = {
 
 
         
+    },
+    postLikes: function (req,res) {
+        
+        
+
     }
 
     

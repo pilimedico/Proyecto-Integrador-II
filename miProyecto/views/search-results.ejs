@@ -14,26 +14,25 @@
 			<div class="product-detail">
 				<div class="row">
 					<article class="col-12 col-lg-8 product-detail-info">
-						<img src= "<%= products[2].cover %>"  alt=" <%= products[2].nombre %>  " class="product-detail-img">
+						<img src= "<%= products.cover %>"  alt=" <%= products.nombre %>  " class="product-detail-img">
 						<p class="product-detail-description">
-							<%= products[2].descripcion %>  </p>
+							<%= products.descripcion %>  </p>
 					</article>
 					<div class="col-12 col-lg-4">
 						<section class="comments">
 						
-							<% for (let i = 0; i < products[0].comentario.length; i++) { %>
+							<% for (let i = 0; i < products.comentario.length; i++) { %>
 								<article>
-								<img src="<%= products[0].comentario[i].usuario.fotoDeperfil %>" alt="<%= products[0].comentario[i].usuario.email%>">
+								<img src="<%= products.comentario[i].usuario.fotoDeperfil %>" alt="<%= products.comentario[i].usuario.email%>">
 								<div class="data">
 									<p class="user">
-									<strong> <a href="/users/profile"> <%= products[0].comentario[i].usuario.email%>  </a> </strong>
-									<%= products[0].comentario[i].comentario %></p>
+									<strong> <a href="/users/profile/<%= products.comentario[i].usuario.id %>"> <%= products.comentario[i].usuario.nombre%>  </a> </strong>
+									<%= products.comentario[i].comentario %></p>
 								</div>
 							</article>
 								
 							<%  } %>
 							
-						
 	
 						</section>
 						<form class="form" action="/results" method="GET">

@@ -18,7 +18,8 @@ const usersController = {
             ]
         })
         .then(function(user){
-            Producto.findAll({where:[{usuario_id : id }]})
+
+            Producto.findAll({where:[{usuario_id : id }] , order: [['createdAt', 'DESC']]})
             .then(function(products){
                 return res.render('profile',{user:user, products:products})
 
