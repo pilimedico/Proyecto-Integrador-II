@@ -7,22 +7,12 @@ const Comentario = db.Comentario;
 
 const productsController = {
 
-    index: function(req,res) {
-        
-    },
+    
 
     detalle:function(req,res) { 
-        let errors = {};
-
-        if(req.body.nombre == ""){
-            errors.message  = "El campo nombre esta vacio";
-            res.locals.errors = errors
-            res.render('register')
-        
-        }
-
 
         let id = req.params.id
+
         let relaciones = {
             include: [
                 {association:"usuario"},
