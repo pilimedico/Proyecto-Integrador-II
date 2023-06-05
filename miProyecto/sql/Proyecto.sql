@@ -45,11 +45,11 @@ foreign key (producto_id) references productos(id)
 );
 
 INSERT INTO usuarios(id, nombre, email, contrasena, fotoDeperfil, fecha, dni)
-VALUES (default, 'Carla Rodriguez', 'Carla12345@gmail.com' , 'PI123456' , '/images/users/foto1.jpg', '10/04/23', '33446677'),
-(default, 'Francisca Romero','FranciscaRomero22@gmail.com' , 'JU123OOP' , '/images/users/foto2.jpg', '25/02/23', '44679877'),
-(default, 'Nicole Sikorski','NicoleSikorski13@gmail.com' , 'SI193LK56' , '/images/users/foto3.jpg', '02/01/23', '23205040'),
-(default, 'Pilar Médico','PilarMedico75@gmail.com', 'PM12345', '/images/users/foto4.jpg', '12-01-23', '66778899'),
-(default, 'Veronica Aides','Veronica89@gmail.com', 'V22345', '/images/users/foto5.jpg', '12-01-22', '6674599');
+VALUES (default, 'Carla Rodriguez', 'Carla12345@gmail.com' , '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y' , '/images/users/foto1.jpg', '10/04/23', '33446677'),
+(default, 'Francisca Romero','FranciscaRomero22@gmail.com' , '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y' , '/images/users/foto2.jpg', '25/02/23', '44679877'),
+(default, 'Nicole Sikorski','NicoleSikorski13@gmail.com' , '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y' , '/images/users/foto3.jpg', '02/01/23', '23205040'),
+(default, 'Pilar Médico','PilarMedico75@gmail.com', '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y', '/images/users/foto4.jpg', '12-01-23', '66778899'),
+(default, 'Veronica Aides','Veronica89@gmail.com', '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y', '/images/users/foto5.jpg', '12-01-22', '6674599');
 
 INSERT INTO productos(id, nombre, descripcion, cover, usuario_id )
 VALUES (default, 'RB Bronzer','Rare Beauty Bronzer, para pieles mixtas.', '/images/products/rare2.jpg', 2 ),
