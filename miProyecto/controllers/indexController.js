@@ -165,7 +165,52 @@ const indexController = {
         
        
 
+    },
+    resultsUser: function(req,res) {
+        let busqueda = req.query.search;
+        let criterio = {
+            where: [{nombre: {[op.like]:"%"+busqueda+"%"}}]}
+            let relaciones = {
+                include: [
+                    {association:"producto"},
+                    {association:"comentario"}
+                ] 
+            }
+
+        Usuario.findOne(criterio,{
+            include: [
+                {association:"producto"},
+                {association:"comentario"}
+            ] 
+        })
+
+            .then(function(user){
+
+                Producto.findAll({where:[{usuario_id : user.id }] } )
+
+                .then(function(products){
+
+                    return res.render('searchresults-user', {user : user, products:products})
+
+            })
+                
+                
+    
+                
+    
+            
+                
+                
+               
+                
+            }).catch(function(err) {
+                console.log(err);
+            })    
+
+        
     }
+
+    
     
     }
 
