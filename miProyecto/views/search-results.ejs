@@ -11,38 +11,27 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<div class="product-detail">
-				<div class="row">
-					<article class="col-12 col-lg-8 product-detail-info">
-						<img src= "<%= products.cover %>"  alt=" <%= products.nombre %>  " class="product-detail-img">
-						<p class="product-detail-description">
-							<%= products.descripcion %>  </p>
+			<% for (let i = 0; i < products.length; i++) {  %>
+				<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+				  
+					<a href="/products/detalle/id/<%= products[i].id %>  "> 
+					<figure class="product-box_image">
+					  <img src= '<%= products[i].cover %>' alt=<%= products[i].nombre%> >
+					</figure>
+		
+					<article class="product-box_data">
+					   <h2> <%= products[i].nombre   %> </h2>
+					  <p>Descripción: <%= products[i].descripcion %></p>
+					</a>
+					  
 					</article>
-					<div class="col-12 col-lg-4">
-						<section class="comments">
-						
-							<% for (let i = 0; i < products.comentario.length; i++) { %>
-								<article>
-								<img src="<%= products.comentario[i].usuario.fotoDeperfil %>" alt="<%= products.comentario[i].usuario.email%>">
-								<div class="data">
-									<p class="user">
-									<strong> <a href="/users/profile/<%= products.comentario[i].usuario.id %>"> <%= products.comentario[i].usuario.nombre%>  </a> </strong>
-									<%= products.comentario[i].comentario %></p>
-								</div>
-							</article>
-								
-							<%  } %>
-							
-	
-						</section>
-						<form class="form" action="/results" method="GET">
-							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						</form>
-						<a class="form" href="/results"> <button type="submit" class="botonFormulario">AGREGAR COMENTARIO</button>  </a> 
-						<hr>
-					</div>
-				</div>
-			</div>
+		
+				  
+				</section>
+			  </div>
+				
+			  <% }  %>
 
 
 	<!-- footer -->
