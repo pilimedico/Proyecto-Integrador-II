@@ -27,7 +27,7 @@
       </div>
       <!-- Show the "ultimos" products -->
       
-     <!-- Creamos un for para que se muestren nuestros productos de data.products  -->
+     
       <% for (let i = 0; i < 4; i++) {  %>
         <div class="col-12 col-sm-6 col-lg-3">
         <section class="product-box">
@@ -36,11 +36,13 @@
             <figure class="product-box_image">
               <img src= '<%= products[i].cover %>' alt=<%= products[i].nombre%> >
             </figure>
+
             <article class="product-box_data">
                <h2> <%= products[i].nombre   %> </h2>
               <p>Descripción: <%= products[i].descripcion %></p>
-              <p>Comentarios:<%= products[i].comentarios %> </p>
+              <p>Comentarios:<%= products[i].comentario.length %> </p>
             </article>
+
           </a>
         </section>
       </div>
@@ -70,7 +72,7 @@
             <article class="product-box_data">
                <h2> <%= products[i].nombre   %> </h2>
               <p>Descripción: <%= products[i].descripcion %></p>
-              <p>Comentarios:<%= products[i].comentarios %> </p>
+              <p>Comentarios:<%= products[i].comentario.length %> </p>
             </article>
           </a>
         </section>

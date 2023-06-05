@@ -12,14 +12,18 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="container">
+			<% if (locals.errors) { %> 
+					<h2 class =  "footer-data h2"> <%= locals.errors.message %>  </h2>
+					 
+					<% } %> 
 				<form action="/register" method="POST" class="formulario">
 					<ul> 
 						<li><label class="form-label" for="email">Ingrese un mail: </label></li> 
-						<li><input class="form-label" type="text" name="email" value="" required ></li> 
+						<li><input class="form-label" type="email" name="email" value="" required ></li> 
 						<li><label class="form-label" for="text">Ingrese un nombre de usuario: </label></li> 
-						<li><input class="form-label" type="text" name="nombre" value="" ></li>
+						<li><input class="form-label" type="text" name="nombre" value=""   ></li>
 						<li><label class="form-label" for="password">Ingrese una contraseña:  </label></li> 
-						<li><input class="form-label" type="password" name="password" value="" required</li>
+						<li><input class="form-label" type="password" name="contrasena" value=""   </li>
 						<li><label class="form-label" for="date">Ingrese fecha de nacimiento: </label></li> 
 						<li><input class="form-label" type="date" name="date" value="" </li>
 						<li><label class="form-label" for="number">Ingrese su DNI:</label></li> 
@@ -31,10 +35,7 @@
 	
 					</form>
 
-					<% if (locals.errors) { %> 
-					<h2 class =  "footer-data h2"> <%= locals.errors.message %>  </h2>
-					 
-					<% } %> 
+					
 			</div>
 
 

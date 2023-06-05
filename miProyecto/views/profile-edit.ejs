@@ -13,24 +13,23 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="container">
-				<form action="/users/profile" method="get" class="formulario">
-				<ul> 
-					<li><label class="form-label" for="">Edite su mail: </label></li> 
-					<li><input class="form-label" type="email" name="mail" value="" id="mail" ></li> 
-					<li><label class="form-label" for="">Edite nombre de usuario: </label></li> 
-					<li><input class="form-label" type="name" name="name" value="" id="name"></li>
-					<li><label class="form-label" for="">Edite su contraseña:  </label></li> 
-					<li><input class="form-label" type="password" name="password" value="" </li>
-					<li><label class="form-label" for="">Edite fecha de nacimiento: </label></li> 
-					<li><input class="form-label" type="date" name="date" value="" </li>
-					<li><label class="form-label" for="">Edite DNI</label></li> 
-					<li><input class="form-label" type="number" name="number" value="" ></li>
-					<li><label class="form-label" for="">Edite foto de perfil: </label></li> 
-					<li><input class="form-label" type="file" name="file" value="" ></li>
-					<button class="botonFormulario" type="submit">Guardar cambios</button>
-				</ul>
-
-				</form>
+				<form action="/users/editprofile/<%= user.id %>" method="POST" class="formulario">
+					<ul> 
+						
+						<li><label class="form-label" for="text">Edite su nombre de usuario: </label></li> 
+						<li><input placeholder=" Nombre actual: <%= user.nombre %> "  class="form-label" type="text" name="nombre" value=""  required ></li>
+						<li><label class="form-label" for="password">Edite su contraseña:  </label></li> 
+						<li><input class="form-label" type="password" name="contrasena" value=""  required </li>
+						<li><label class="form-label" for="date">Edite fecha de nacimiento: </label></li> 
+						<li><input class="form-label" type="date" name="fecha" value="" </li>
+						<li><label class="form-label" for="number">Edite su DNI:</label></li> 
+						<li><input <input placeholder=" Dni actual: <%= user.dni %>  "class="form-label" type="number" name="dni" value="" ></li>
+						<li><label class="form-label" for="">Edite su foto de perfil: </label></li> 
+						<li><input <input <input placeholder=" Foto actual: <%= user.fotoDeperfil %>  " class="form-label" type="text" name="fotoDeperfil" value="" ></li>
+						<button class="botonFormulario" type="submit">Guardar cambios</button>
+					</ul>
+	
+					</form>
 			</div>
 
 

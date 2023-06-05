@@ -2,20 +2,21 @@ const data = require('../data/data');
 const db = require("../database/models")
 const Producto = db.Producto;
 const Usuario = db.Usuario;
+const bcryptjs = require('bcryptjs')
 const Comentario = db.Comentario;
 const usersController = {
 
     profile: function(req,res) {
         let id = req.params.id
-        let relaciones = {
+        
+
+        Usuario.findByPk(id, {
             include: [
                 {association:"producto"},
+                {association:"comentario"}
 
             ]
-        }
-
-
-        Usuario.findByPk(id, relaciones)
+        })
         .then(function(user){
             Producto.findAll({where:[{usuario_id : id }]})
             .then(function(products){
@@ -35,13 +36,33 @@ const usersController = {
     
     editprofile: function(req,res) {
 
-        Usuario.findAll()
+        Usuario.findByPk(req.params.id)
+
         .then(function(user){
             return res.render('profile-edit', {user: user})
-        } )
-        .catch(function(err){console.log(err)})
+             
+        }).catch(function(err) {
+            console.log(err);
+        })
+        
+    },
 
+        
+    Posteditprofile: function (req,res) {
 
+        let profile_edit = {
+            nombre:req.body.nombre, 
+            contrasena:req.body.contrasena, 
+            fotoDeperfil:req.body.fotoDeperfil, 
+            fecha:  req.body.fecha,
+            dni: req.body.dni
+        }
+
+         
+        Usuario.update(profile_edit, {where: [{id: req.params.id}]})
+        return res.redirect('/') 
+
+        
     },
     logout: function(req,res) {
         req.session.destroy()

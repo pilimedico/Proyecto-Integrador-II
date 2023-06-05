@@ -12,6 +12,16 @@ const productsController = {
     },
 
     detalle:function(req,res) { 
+        let errors = {};
+
+        if(req.body.nombre == ""){
+            errors.message  = "El campo nombre esta vacio";
+            res.locals.errors = errors
+            res.render('register')
+        
+        }
+
+
         let id = req.params.id
         let relaciones = {
             include: [
@@ -23,7 +33,11 @@ const productsController = {
 
         Producto.findByPk(id,relaciones)
         .then(function(products){
-            return res.render('product', {products : products, user: [products.usuario] })
+            
+            Comentario.findAll({where: [{id_post : products.id}] }, {order: [['createdAt', 'DESC']]})
+            .then(function(comment){
+                return res.render('product', {products : products, user: [products.usuario], comment:comment})
+            })
             
         }).catch(function(err) {
             console.log(err);
@@ -70,8 +84,94 @@ const productsController = {
         
         Producto.create(producto)
         return res.redirect('/')
+    },
+
+    edit: function(req,res) {
+        Producto.findByPk(req.params.id)
+
+        .then(function(product){
+            return res.render('product-edit', {product:product})
+             
+        }).catch(function(err) {
+            console.log(err);
+        })
+        
+    },
+
+    Postedit: function (req,res) {
+
+        Producto.findByPk(req.params.id)
+
+        .then(function(products){
+
+            if (req.session.Usuario.id == products.usuario_id) {
+
+                let producto_edit = {
+                    nombre:req.body.nombre, 
+                    descripcion:req.body.descripcion, 
+                    cover:req.body.cover, 
+                    usuario_id:  req.session.Usuario.id}
+        
+                 
+                Producto.update(producto_edit, {where: [{id: req.params.id}]})
+                return res.redirect('/') 
+                    
+                
+
+            } else {
+                let errors = {}
+                errors.message  = "No puede editar este producto, porque no le pertenece";
+                res.locals.errors = errors;
+                return res.render('product-edit', {product:products})
+            }
+
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
+ 
+
+    }  ,
+    PostDelete: function (req,res) {
+
+        Producto.findByPk(req.params.id, {
+            include: [
+                {association:"usuario"},
+                {association:"comentario", include: {association:"usuario"}}
+            ]
+        } )
+
+        .then(function(products){
+
+            if (req.session.Usuario.id == products.usuario_id) {
+
+                Producto.destroy({where: [{ id: req.params.id}]})
+                .then(function(coment) {
+                    Comentario.destroy({where: [ {producto_id : req.params.id}]})
+                    return res.redirect('/') 
+                })
+                    
+            
+            } else {
+                let errors = {}
+                errors.message  = "No puede eliminar este producto porque no le pertence";
+                res.locals.errors = errors;
+                return res.render('product', {products:products})
+            }
+
+        })
+        .catch(function(err) {
+            console.log(err);
+        })
+ 
+
+
+        
     }
+
     
 
+
 }
+        
 module.exports = productsController;

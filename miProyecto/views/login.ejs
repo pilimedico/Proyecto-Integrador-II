@@ -11,6 +11,11 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
+			<% if (locals.errors) { %> 
+					<h2 class =  "footer-data h2"> <%= locals.errors.message %>  </h2>
+					 
+					<% } %> 
+					
 			<form action="/login" method="post" class="formulario">
 				<ul> 
 					<li><label class="form-label" for="email">Ingrese usuario (mail): </label></li>
@@ -23,10 +28,7 @@
 				</ul>
 
 				</form>
-				<% if (locals.errors) { %> 
-					<h2 class =  "footer-data h2"> <%= locals.errors.message %>  </h2>
-					 
-					<% } %> 
+				
 			</div>
 
 

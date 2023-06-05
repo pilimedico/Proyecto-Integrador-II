@@ -12,24 +12,31 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
+				<h2 class="products-title">Editar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<div class="container">
-				<form action="/products/add" method="POST" class="formulario">
+
+             <% if (locals.errors) { %> 
+					<h2 class =  "footer-data h2"> <%= locals.errors.message %>  </h2>
+					 
+					<% } %> 
+				<form action="/products/edit/ <%=product.id %> " method="POST" class="formulario">
 				<ul> 
-					<li><label class="form-label" for="">Agregue una imagen: </label></li> 
+					<li><label class="form-label" for="">Edite la imagen: </label></li> 
 					<li><input class="form-label" type="text" name="cover" value="" ></li>
-					<li><label class="form-label" for="">Ingrese nombre del producto: </label></li> 
+					<li><label class="form-label" for="">Edite el nombre del producto: </label></li> 
 					<li><input class="form-label" type="text" name="nombre" value="" id="name" </li>
-					<li><label class="form-label" for="">Agregue una descripcion: </label></li> 
+					<li><label class="form-label" for="">Edite la descripcion: </label></li> 
 					<li><input class="form-label" type="text" name="descripcion" value="" ></li>
-					<li><label class="form-label" for="">Ingrese fecha de carga: </label></li> 
+					<li><label class="form-label" for="">Edite fecha de carga: </label></li> 
 					<li><input class="form-label" type="date" name="createdAt" value="" </li>
-					<button class="botonFormulario"type="submit">Agregar producto</button>
+					<button class="botonFormulario"type="submit">Editar producto</button>
 				</ul>
 
 				</form>
+
+               
 			</div>
 
 

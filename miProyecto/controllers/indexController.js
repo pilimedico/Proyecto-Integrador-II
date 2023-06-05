@@ -7,8 +7,18 @@ const Comentario = db.Comentario;
 
 
 const indexController = {
+
+
+    
+       
+
     inicio: function(req,res) {
-        Producto.findAll()
+        
+        Producto.findAll( {order: [['createdAt', 'DESC']], include: [
+            {association:"usuario"},
+            {association:"comentario", include: [{association:"usuario"}]}
+        ] })
+            
         .then(function(products){
             return res.render('index', {products: products})
         } )
@@ -44,6 +54,11 @@ const indexController = {
                     res.locals.errors = errors;
                     return res.render("login")
                 }
+            } else {
+                    let errors = {};
+                    errors.message = "Este mail no está registrado"
+                    res.locals.errors = errors;
+                    return res.render("login")
             }
         })
     },
@@ -54,56 +69,67 @@ const indexController = {
     },
 
     postRegister: function(req,res) {
+
         
-        let errors = {};
-        if(req.body.nombre == ""){
-            errors.message  = "El campo nombre esta vacio";
-            res.locals.errors = errors
-            res.render('register')
 
-        } else if (req.body.email == ""){
-            errors.message  = "El campo email esta vacio";
-            res.locals.errors = errors
-            res.render('register')
+        
 
-        } else if (req.body.contrasena == ""){
-            errors.message  = "El campo contraseña esta vacio";
-            res.locals.errors = errors
-            res.render('register')
 
-        } else {
-    
-            Usuario.findOne({email : req.body.email}) 
-            .then(function(resultado) { //agregamos la propiedad de error y decimos que el email ya existe 
+        console.log(req.body.email)
+            
+        Usuario.findOne({where: [{email : req.body.email}]}) 
+        
+        .then(function(resultado) { //agregamos la propiedad de error y decimos que el email ya existe
+
+            let errors = {}
+  
+                console.log(req.body.contrasena);
+                if (resultado) {
 
                 errors.message = "El email ya existe!"
                 res.locals.errors = errors;
                 res.render('register')
 
+                }else if(req.body.nombre == ""){
+                    errors.message  = "El campo nombre esta vacio";
+                    res.locals.errors = errors
+                    res.render('register')
+        
+                } else if (req.body.contrasena == ""){
+                    errors.message  = "El campo contraseña esta vacio";
+                    res.locals.errors = errors;
+                    res.render('register')
+        
+                }
+
+                 else if (req.body.contrasena.length < 3) {
+                    errors.message  = "La contraseña debe tener 3 o más caracteres ";
+                    res.locals.errors = errors;
+                    res.render('register')
+                } 
+                else{
+                
+                let passEncriptada= bcryptjs.hashSync(req.body.contrasena,req.body.contrasena.length);
+                let usuario = {
+                    nombre:req.body.nombre, //allowNull: false
+                    email:req.body.email, //allowNull: false
+                    contrasena:passEncriptada, //allowNull: false
+                    fotoDeperfil: req.body.fotoDeperfil,
+                    fecha: req.body.date ,
+                    dni: req.body.dni 
+                }
+                Usuario.create(usuario);
+                return res.redirect('/login');
+                }
+
             }).catch(function(error) {
                 console.log(error);
             })
             
-            let passEncriptada= bcryptjs.hashSync(req.body.password,12);
-            let usuario = {
-            nombre:req.body.nombre, //allowNull: false
-            email:req.body.email, //allowNull: false
-            contrasena:passEncriptada, //allowNull: false
-            fotoDeperfil: req.body.fotoDeperfil,
-            fecha: req.body.date ,
-            dni: req.body.dni 
-        }
+            
+            
+        },
                 
-       Usuario.create(usuario);
-       return res.redirect('/login');
-
-        }
-
-        
-        
-    },
-
-
     results : function(req,res) {
 
         let relaciones = {
@@ -122,9 +148,7 @@ const indexController = {
        
 
     }
-
-       
-        
+    
     }
 
 

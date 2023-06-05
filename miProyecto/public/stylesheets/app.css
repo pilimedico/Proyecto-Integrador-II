@@ -95,6 +95,7 @@ hr {
   position: relative;
   display: flex;
   align-items: center;
+  margin-top: 20px;
 }
 
 .search-form_input {
@@ -558,4 +559,13 @@ textarea.form-input {
    margin: 16px 0;
   }
 
+  .botonSeguir{
+    background: var(--pink) ;
+    width: 100%;
+    border: none;
+    padding: 12px;
+    color: #fff;
+    margin: 16px 0;
+    margin-left: 20px;
+  }
 }
