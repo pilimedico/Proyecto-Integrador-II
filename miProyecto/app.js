@@ -30,6 +30,9 @@ app.use(function(req, res, next){
     return next()
 })
 
+//si hay cookie
+//id buscar en db
+
                 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

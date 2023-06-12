@@ -154,7 +154,9 @@ const indexController = {
                       }
                    }
                 ]
-             }
+             },
+            order:[
+                ['createdAt', 'DESC']]
             
             }
         

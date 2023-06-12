@@ -17,16 +17,16 @@ const productsController = {
             include: [
                 {association:"usuario"},
                 {association:"comentario", include: {association:"usuario"}}
-            ]
+            ], order: [[{model:Comentario, as: 'comentario'},'createdAt', 'DESC']]//le pido que me ordene el modelo de producto en base a el de comentario, y al mdoelo de comentario se lo estoy pasando como la asociacion de comentario y producto
         }
 
 
         Producto.findByPk(id,relaciones)
          .then(function(products){
             
-            Comentario.findAll({where: [{id_post : products.id}] }, {order: [['createdAt', 'DESC']]})
+            Comentario.findAll({where: [{id_post: products.id}] , order: [['createdAt', 'DESC']]})
             .then(function(comment){
-                console.log(products.usuario.id, req.session.Usuario);
+
                 return res.render('product', {products : products, user: [products.usuario], comment:comment})
              })
             
@@ -161,7 +161,7 @@ const productsController = {
     },
     postLikes: function (req,res) {
         
-        
+
 
     }
 

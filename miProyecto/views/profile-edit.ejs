@@ -17,15 +17,15 @@
 					<ul> 
 						
 						<li><label class="form-label" for="text">Edite su nombre de usuario: </label></li> 
-						<li><input placeholder=" Nombre actual: <%= user.nombre %> "  class="form-label" type="text" name="nombre" value=""  required ></li>
+						<li><input class="form-label" type="text" name="nombre" value="<%= user.nombre %>"  required ></li>
 						<li><label class="form-label" for="password">Edite su contraseña:  </label></li> 
 						<li><input class="form-label" type="password" name="contrasena" value=""  required </li>
 						<li><label class="form-label" for="date">Edite fecha de nacimiento: </label></li> 
-						<li><input class="form-label" type="date" name="fecha" value="" </li>
+						<li><input class="form-label" type="date" name="fecha" value="<%= user.fecha %> " ></li> <!-- No funciona asi, ya que con tipo fecha hay que hacer mas cambios -->
 						<li><label class="form-label" for="number">Edite su DNI:</label></li> 
-						<li><input <input placeholder=" Dni actual: <%= user.dni %>  "class="form-label" type="number" name="dni" value="" ></li>
+						<li><input class="form-label" type="number" name="dni" value="<%= user.dni %>" ></li>
 						<li><label class="form-label" for="">Edite su foto de perfil: </label></li> 
-						<li><input <input <input placeholder=" Foto actual: <%= user.fotoDeperfil %>  " class="form-label" type="text" name="fotoDeperfil" value="" ></li>
+						<li><input class="form-label" type="text" name="fotoDeperfil" value="<%= user.fotoDeperfil %> " ></li>
 						<button class="botonFormulario" type="submit">Guardar cambios</button>
 					</ul>
 	
