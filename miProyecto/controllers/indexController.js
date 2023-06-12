@@ -40,7 +40,7 @@ const indexController = {
             // si encuentra algo va a ser true de lo contrario sera false
             if(results){
         //si encuentra el mail checkeamos si coincide la contra
-                let check = bcryptjs.compareSync(req.body.password, results.contrasena) //estod evuelve true si coincide la contraseña del formulario con la de la base de datos
+                let check = bcryptjs.compareSync(req.body.password, results.contrasena) //esto devuelve true si coincide la contraseña del formulario con la de la base de datos
                 
                 if(check){
                     req.session.Usuario = results.dataValues; 
@@ -142,13 +142,29 @@ const indexController = {
             ] 
         }
         let criterio = {
-            where: [{nombre: {[op.like]:"%"+busqueda+"%"} }]
-    }
+            where: {
+                [op.or]: [{
+                      nombre: {
+                         [op.like]: "%"+busqueda+"%"
+                      }
+                   },
+                   {
+                      descripcion: {
+                         [op.like]: "%"+busqueda+"%"
+                      }
+                   }
+                ]
+             }
+            
+            }
         
 
         Producto.findAll(criterio,relaciones)
         .then(function(products){
             return res.render('search-results', {products : products})
+
+            
+            
             
 
             
@@ -169,40 +185,33 @@ const indexController = {
     resultsUser: function(req,res) {
         let busqueda = req.query.search;
         let criterio = {
-            where: [{nombre: {[op.like]:"%"+busqueda+"%"}}]}
-            let relaciones = {
-                include: [
-                    {association:"producto"},
-                    {association:"comentario"}
-                ] 
+            where: {
+                [op.or]: [{
+                      nombre: {
+                         [op.like]: "%"+busqueda+"%"
+                      }
+                   },
+                   {
+                      email: {
+                         [op.like]: "%"+busqueda+"%"
+                      }
+                   }
+                ]
+             }
+            
             }
+            
 
-        Usuario.findOne(criterio,{
-            include: [
-                {association:"producto"},
-                {association:"comentario"}
-            ] 
-        })
+        Usuario.findAll(criterio)
 
             .then(function(user){
 
-                Producto.findAll({where:[{usuario_id : user.id }] } )
+                
 
-                .then(function(products){
-
-                    return res.render('searchresults-user', {user : user, products:products})
-
-            })
-                
-                
-    
-                
-    
-            
-                
-                
-               
-                
+                return res.render('searchresults-user', {user : user})
+                            
+                        
+                         
             }).catch(function(err) {
                 console.log(err);
             })    

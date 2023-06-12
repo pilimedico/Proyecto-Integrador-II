@@ -8,86 +8,67 @@
 	<% } %>
 	<!-- /Header -->
 
-	<!-- Datos del usuario -->
-	<section class="info-usuario container products-wrapper">
-		<div class="row">
-
-
-			<div class="img-container offset-3 col-2"> 
-				<img src= ' <%= user.fotoDeperfil %>' alt="foto de perfil" class="foto-perfil">
-			</div>
-
-			<div class="data-container col-6">
-				<div class="d-flex align-items-center ">
-
-					<h1 class="main-title"> <%= user.nombre %>
-						
-					</h1>
-
-					<% if (locals.username) { %> <!-- Si esta logueado -->
-
-					<% if (locals.username.id == user.id) { %> <!-- Si esta logueado y coincide que es su perfil que muestre para editar perfil -->
-
-					<h1 class="main-title">
-					<a href="/users/editprofile/<%=user.id %> ">
-							<i class="fas fa-cog"></i>
-						</a>
-					</h1>
-					
-			<% } else { %>
-			<a class="btn mt-3 ml-4" href="">SEGUIR</a> <!-- Si esta logueado pero no coincide que es su perfil que muestre para seguir -->
-			<% }  %>
-					 
-					<% }  else { %>
-
-					<a href="/login"><button class="botonSeguir">Debe estar logueado para seguir al usuario!</button></a> 
-					<!-- Si no esta logueado que aparezca un cartel y  lo redireccione a login -->
-					 
-<% } %>
-
-					
-	
-				</div>
-				<div>
-					<ul class="">
-						<li> <%= products.length %>  productos</li>
-						<li>200 seguidores</li>
-                        
-						
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- /Datos del usuario -->
-
-	<!-- Mis productos -->
-	<div class="container products-wrapper">
+	<% if (user.length > 0) { %> 
+				
+		
+		<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Productos</h2>
+				<h2 class="products-title">Resultados de búsqueda</h2>
+
+
+				
+
+
 			</div>
-	<!-- Show mis productos -->
-			<% for (let i = 0; i < products.length; i++) {  %>
-        <div class="col-12 col-sm-6 col-lg-3">
-        <section class="product-box">
-          
-          <a href="/products/detalle/id/<%= products[i].id %>  "> 
-            <figure class="product-box_image">
-              <img src= '<%= products[i].cover %>' alt=<%= products[i].nombre%> >
-            </figure>
-            <article class="product-box_data">
-               <h2> <%= products[i].nombre   %> </h2>
-              <p>Descripción: <%= products[i].descripcion %></p>
-              <p>Comentarios:<%= products[i].comentarios %> </p>
-            </article>
-          </a>
-        </section>
-      </div>
-        
-      <% }  %>
 			
-	<!-- /Mis productos -->
+			<% for (let i = 0; i < user.length; i++) {  %>
+				<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+				  
+					<a href="/users/profile/<%= user[i].id %> "> 
+					<figure class="product-box_image">
+					  <img src= '<%= user[i].fotoDeperfil %>' >
+					</figure>
+		
+					<article class="product-box_data">
+					<h2> <%= user[i].nombre   %> </h2>
+					  <p>Email: <%= user[i].email %></p>
+					  <p>DNI: <%= user[i].dni %></p>
+					  
+					  
+
+					</a>
+					  
+					</article>
+		
+				  
+				</section>
+			  </div>
+				
+			  <% }  %>
+
+					 
+	<% } else{ %> 
+<div class="container products-wrapper">
+		<div class="row">
+<div class="col-12">
+				<h2 class="products-title">No hay resultados de búsqueda</h2>
+
+
+				
+
+
+			</div>
+
+
+			</div>
+
+				
+
+				<% } %>
+
+
 
 
 	<!-- footer -->
