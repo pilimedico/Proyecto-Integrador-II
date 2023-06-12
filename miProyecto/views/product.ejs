@@ -12,15 +12,15 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> <%= products.nombre %> </h2> 
-
-			<% if (locals.username != undefined) { %>
+			<% if(locals.username != undefined) {%>
+			<% if (locals.username.id == products.usuario.id) { %>
 			<p class="product-detail-description">
 				<a href="/products/edit/ <%= products.id %> ">Editar</a>
 				<form action="/products/delete/<%= products.id %> " method="post">
 						<button class="botonFormulario" type="submit"> Borrar producto </button>
 						</form> 
 			</p>
-	<% } %>
+	<% } }%>
 
 
 			

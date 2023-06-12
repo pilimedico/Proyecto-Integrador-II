@@ -22,12 +22,13 @@ const productsController = {
 
 
         Producto.findByPk(id,relaciones)
-        .then(function(products){
+         .then(function(products){
             
             Comentario.findAll({where: [{id_post : products.id}] }, {order: [['createdAt', 'DESC']]})
             .then(function(comment){
+                console.log(products.usuario.id, req.session.Usuario);
                 return res.render('product', {products : products, user: [products.usuario], comment:comment})
-            })
+             })
             
         }).catch(function(err) {
             console.log(err);
