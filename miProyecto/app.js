@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const db = require("./database/models")
+const Usuario = db.Usuario;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -24,16 +26,43 @@ app.use(session( { secret: "Nuestro mensaje secreto",
 				resave: false,
 				saveUninitialized: true }));
  
-//Creando un midelware de aplication
-app.use(function(req, res, next){
-    res.locals.username = req.session.Usuario
-    return next()
-})
+//Creando un midelware de application
+app.use(function(req, res, next) {
+  //Lógica
 
-//si hay cookie
-//id buscar en db
+  if (req.session.Usuario != undefined) {
+      res.locals.username = req.session.Usuario;
 
-                
+      return next();
+  }
+
+  return next();
+});
+
+// Creando el middleware de cookies 
+app.use(function(req, res, next) {
+  if (req.cookies.usuario != undefined && req.session.Usuario == undefined) {
+      let idUsuarioEnCookie = req.cookies.usuario;
+
+      Usuario.findByPk(idUsuarioEnCookie)
+      .then((user) => {
+
+        req.session.Usuario = user.dataValues;
+        res.locals.username  = user.dataValues;
+
+        return next();
+        
+      }).catch((err) => {
+        console.log(err);
+        return next();
+      });
+  } else {
+    return next();
+  }
+
+
+});
+      
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter )
