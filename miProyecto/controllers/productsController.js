@@ -1,8 +1,7 @@
-const data = require('../data/data'); //requerimos el modulo exportado anteriormente.
 const db = require("../database/models")
 const Producto = db.Producto;
-const Usuario = db.Usuario;
 const Comentario = db.Comentario;
+const Like = db.Like;
 
 
 const productsController = {
@@ -16,7 +15,9 @@ const productsController = {
         let relaciones = {
             include: [
                 {association:"usuario"},
-                {association:"comentario", include: {association:"usuario"}}
+                {association:"comentario", include: {association:"usuario"}},
+                {association:"like"}
+
             ], order: [[{model:Comentario, as: 'comentario'},'createdAt', 'DESC']]//le pido que me ordene el modelo de producto en base a el de comentario, y al mdoelo de comentario se lo estoy pasando como la asociacion de comentario y producto
         }
 
@@ -35,6 +36,7 @@ const productsController = {
         })
    
     },
+    //comentarios
     detalleComment: function(req,res) {
         
     
@@ -64,6 +66,7 @@ const productsController = {
         res.render('product-add')
 
     },
+    //agregar productos
     postAdd: function(req,res) {
         let producto = {
             nombre:req.body.nombre, 
@@ -77,6 +80,7 @@ const productsController = {
         return res.redirect('/')
     },
 
+    //editar productos
     edit: function(req,res) {
         Producto.findByPk(req.params.id)
 
@@ -123,6 +127,7 @@ const productsController = {
  
 
     }  ,
+    //eliminar productos
     PostDelete: function (req,res) {
 
         Producto.findByPk(req.params.id, {
@@ -159,8 +164,24 @@ const productsController = {
 
         
     },
+    //Likes
     postLikes: function (req,res) {
         
+        let likes = {
+
+            usuario_id: req.session.Usuario.id ,
+            producto_id: req.params.id
+
+        }
+        Like.create(likes)
+        Producto.findByPk(req.params.id)
+        .then(function(products){
+            return res.redirect(`/products/detalle/id/${products.id}`)
+            
+        }).catch(function(err) {
+            console.log(err);
+        })
+
 
 
     }

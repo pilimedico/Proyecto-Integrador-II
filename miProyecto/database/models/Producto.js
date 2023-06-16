@@ -49,6 +49,10 @@ module.exports = function(sequelize, dataTypes) {
             as: 'comentario',
             foreignKey: 'producto_id'
         })
+        Producto.hasMany(models.Like, {
+            as: 'like',
+            foreignKey: 'producto_id'
+        })
         
         
     }

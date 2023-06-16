@@ -36,7 +36,7 @@
 					<img src= "<%= products.cover %>"  alt=" <%= products.nombre %>  " class="product-detail-img">
 					<p class="product-detail-description">
 						<%= products.descripcion %>  </p>
-						<p class="product-detail-description">Likes: </p>
+						<p class="product-detail-description">Likes: <%= products.like.length %> </p>
 					<p class="product-detail-description">
 						Publicado por: <a href="/users/profile/<%= products.usuario.id %>"><%= products.usuario.nombre %>  </p>	</a> 
 				</article>
@@ -69,7 +69,7 @@
 					
 					<hr>
 					<div> 
-							<form action="/products/likes" method="post">
+							<form action="/products/likes/<%= products.id %>" method="post">
 
 							<button type="submit" class="botonFormulario"> Dale like al producto </button>
 

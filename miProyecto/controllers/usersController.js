@@ -1,9 +1,7 @@
-const data = require('../data/data');
 const db = require("../database/models")
 const Producto = db.Producto;
 const Usuario = db.Usuario;
 const bcryptjs = require('bcryptjs')
-const Comentario = db.Comentario;
 const usersController = {
 
     profile: function(req,res) {
@@ -13,7 +11,8 @@ const usersController = {
         Usuario.findByPk(id, {
             include: [
                 {association:"producto"},
-                {association:"comentario"}
+                {association:"comentario"},
+                {association:"like"}
 
             ]
         })
@@ -48,12 +47,14 @@ const usersController = {
         
     },
 
-        
+    //procesamos el formulario de editar el perfil via POST    
     Posteditprofile: function (req,res) {
+
+        let passEncriptada= bcryptjs.hashSync(req.body.contrasena,req.body.contrasena.length);
 
         let profile_edit = {
             nombre:req.body.nombre, 
-            contrasena:req.body.contrasena, 
+            contrasena:passEncriptada, 
             fotoDeperfil:req.body.fotoDeperfil, 
             fecha:  req.body.fecha,
             dni: req.body.dni

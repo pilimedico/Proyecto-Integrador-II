@@ -1,9 +1,7 @@
-const data = require('../data/data');
 const db = require("../database/models")
 const bcryptjs = require('bcryptjs')
 const Producto = db.Producto;
 const Usuario = db.Usuario;
-const Comentario = db.Comentario;
 const op = db.Sequelize.Op;
 
 
@@ -71,20 +69,14 @@ const indexController = {
 
     postRegister: function(req,res) {
 
+        Usuario.findOne({where: [{email : req.body.email}]}) //que busque un usuario donde coincide lo que llega por el formulario con el mail en la base de datos
         
-
-        
-
-
-        console.log(req.body.email)
-            
-        Usuario.findOne({where: [{email : req.body.email}]}) 
-        
-        .then(function(resultado) { //agregamos la propiedad de error y decimos que el email ya existe
+        .then(function(resultado) { 
 
             let errors = {}
   
-                console.log(req.body.contrasena);
+
+                //si encuentra un resultado es porque el mail ya esta registrado en la base de datos
                 if (resultado) {
 
                 errors.message = "El email ya existe!"
@@ -109,12 +101,12 @@ const indexController = {
                     res.render('register')
                 } 
                 else{
-                
+                //si no se cumple ninguna de las restricciones anteriores, agrega al usuario en la db
                 let passEncriptada= bcryptjs.hashSync(req.body.contrasena,req.body.contrasena.length);
                 let usuario = {
-                    nombre:req.body.nombre, //allowNull: false
-                    email:req.body.email, //allowNull: false
-                    contrasena:passEncriptada, //allowNull: false
+                    nombre:req.body.nombre, 
+                    email:req.body.email, 
+                    contrasena:passEncriptada, 
                     fotoDeperfil: req.body.fotoDeperfil,
                     fecha: req.body.date ,
                     dni: req.body.dni 
@@ -130,7 +122,7 @@ const indexController = {
             
             
         },
-                
+    //resultado de busqueda de productos            
     results : function(req,res) {
 
 
@@ -166,16 +158,6 @@ const indexController = {
             return res.render('search-results', {products : products})
 
             
-            
-            
-
-            
-
-        
-            
-            
-           
-            
         }).catch(function(err) {
             console.log(err);
         })
@@ -184,6 +166,7 @@ const indexController = {
        
 
     },
+    //resultado de busqueda de usuarios    
     resultsUser: function(req,res) {
         let busqueda = req.query.search;
         let criterio = {

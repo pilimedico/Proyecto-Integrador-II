@@ -9,6 +9,6 @@ router.post('/add',productsController.postAdd); //para procesar el formulario
 router.get('/edit/:id',productsController.edit);
 router.post('/edit/:id',productsController.Postedit);
 router.post('/delete/:id',productsController.PostDelete);
-router.post('/likes',productsController.postLikes);
+router.post('/likes/:id',productsController.postLikes);
 
 module.exports = router;

@@ -44,11 +44,22 @@ foreign key (usuario_id) references usuarios(id),
 foreign key (producto_id) references productos(id)
 );
 
+create table likes(
+id_post int unsigned primary key auto_increment,
+usuario_id int unsigned,
+producto_id int unsigned,
+createdAt timestamp default current_timestamp,
+updatedAt timestamp default current_timestamp on update current_timestamp,
+deletedAt timestamp default current_timestamp,
+foreign key (usuario_id) references usuarios(id),
+foreign key (producto_id) references productos(id)
+);
+
 INSERT INTO usuarios(id, nombre, email, contrasena, fotoDeperfil, fecha, dni)
 VALUES (default, 'Carla Rodriguez', 'Carla12345@gmail.com' , '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y' , '/images/users/foto1.jpg', '10/04/23', '33446677'),
-(default, 'Francisca Romero','FranciscaRomero22@gmail.com' , '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y' , '/images/users/foto2.jpg', '25/02/23', '44679877'),
-(default, 'Nicole Sikorski','NicoleSikorski13@gmail.com' , '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y' , '/images/users/foto3.jpg', '02/01/23', '23205040'),
-(default, 'Pilar Médico','PilarMedico75@gmail.com', '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y', '/images/users/foto4.jpg', '12-01-23', '66778899'),
+(default, 'Francisca Romero','FranciscaRomero22@gmail.com' , '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y' , '/images/users/fran.jpg', '25/02/23', '44679877'),
+(default, 'Nicole Sikorski','NicoleSikorski13@gmail.com' , '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y' , '/images/users/niki.jpg', '02/01/23', '23205040'),
+(default, 'Pilar Médico','PilarMedico75@gmail.com', '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y', '/images/users/pili2.jpg', '12-01-23', '66778899'),
 (default, 'Veronica Aides','Veronica89@gmail.com', '$2a$04$VzfjZVHAoQZOXwHpS4Pc2u7aRikSBKimpBTc7SLfTLtZAZE3jLH2y', '/images/users/foto5.jpg', '12-01-22', '6674599');
 
 INSERT INTO productos(id, nombre, descripcion, cover, usuario_id )
